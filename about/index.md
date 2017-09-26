@@ -1,22 +1,21 @@
 ---
 layout: page
-title: About the Theme
-tags: [about, Jekyll, theme, JBlog]
-date: 2016-03-21
+title: About me
+tags: [about, jerbi, ahmed]
+date: 2017-09-24
 ---
 
-![jekyll Image](http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/02/1424055625jekyll.png)
+![jekyll Image](./../assets/img/profile.png)
 {: .image-pull-right}
 
-<center><b>JBlog</b> is a simple jekyll theme.</center>
+<center>Le monde appartient à ceux dont les ouvriers se lèvent tôt.</center>
+<center><b>-- Moi même </b> .</center>
 
 ## About
 
-I have used this theme in my own php and ruby blogs. And there are some shortcomings. If something looks extremely ugly and you can't resist to fix it, just send me a PR. I will be grateful.
+Moi c'est Ahmed Jerbi, 25 ans .. enfin 25 ans au moment ou j'écris ces lignes :stuck_out_tongue_winking_eye:.  
+Je suis devOps de lundi à vendredi et développeur le week-end <span style="color: red">while j'ai du temps && not (envie de dormir) :sleeping:  </span>
 
+Je cherche toujours à être polyvalent. J’ai à cœur de me mettre sur les tendances et sur les nouvelles technos, ça sert à ça de veiller !   
 
-If you like this theme or using it, please give a **star** for motivation.
-
-You want to **use it?**      
-
-[Install JBlog](https://github.com/alperenbozkurt/JBlog){: .btn .btn-info}
+Ce portfolio est l'une de mes créations. A vous de découvrir la suite :v:!
