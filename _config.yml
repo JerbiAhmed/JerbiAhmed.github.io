@@ -1,7 +1,7 @@
 # Site
 title:          Jerbi Ahmed
 bio:            'Just a simple personal blog'
-description:    "Personal blog for my techy notes"
+description:    "Personal blog, few notes for dev things I do"
 picture:        'assets/img/profile.png'
 locale:         en_US
 url:            https://jerbiahmed.github.io/
@@ -24,7 +24,7 @@ sass:
 # Social
 # if you don't have any of social below, comment the line.
 email: jerbiahmed@outlook.com
-#twitter: username
+twitter: jerbi_ahmed_
 facebook: jerbia7med
 #google:
   #plus: #username

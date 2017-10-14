@@ -5,17 +5,27 @@ tags: [about, jerbi, ahmed]
 date: 2017-09-24
 ---
 
-![jekyll Image](./../assets/img/profile.png)
+![jekyll Image](./../assets/img/imaget.png)
 {: .image-pull-right}
 
-<center>Le monde appartient à ceux dont les ouvriers se lèvent tôt.</center>
-<center><b>-- Moi même </b> .</center>
+<center>/* TODO: Add a quote or a proverb, everybody does that in their blog! */</center>
+<center><b>-- Me </b> .</center>
 
 ## About
 
-Moi c'est Ahmed Jerbi, 25 ans .. enfin 25 ans au moment ou j'écris ces lignes :stuck_out_tongue_winking_eye:.  
-Je suis devOps de lundi à vendredi et développeur le week-end <span style="color: red">while j'ai du temps && not (envie de dormir) :sleeping:  </span>
+Hello world!  
 
-Je cherche toujours à être polyvalent. J’ai à cœur de me mettre sur les tendances et sur les nouvelles technos, ça sert à ça de veiller !   
+This is Ahmed Jerbi :hand:  
+I'm currently doing continuous integration/delivery engineering with DevOps focus.  
+Most of the time I write shell scripts ansible playbooks and dockerfiles, building jenkins jobs, automating software pipelines and  managing clusters with Openshift.  
+In the past, I did node.js (still love it :heart:) and PHP mostly with Symfony also in my education at the university I wrote JAVA, Python, C++ ..
 
-Ce portfolio est l'une de mes créations. A vous de découvrir la suite :v:!
+What are non-tech things am I doing?  
+Mostly sleeping :no_mouth:  
+Well, all the boring stuff like watching sports on TV or playing games.  
+I also want to make music, in particular techno and trance ..  but never got to pass the first notes :laughing::laughing::laughing:
+
+
+Enjoy your stay :wink:  
+
+Ahmed

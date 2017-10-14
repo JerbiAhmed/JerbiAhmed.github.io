@@ -14,8 +14,8 @@
 @import url("https://fonts.googleapis.com/css?family=Bree+Serif");
 @import url("https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:900");
 
-$bg-blue: rgba(52, 152, 219, 1);
-$mainColor: #ecf0f1;
+$bg-blue: rgb(120, 144, 241);
+$mainColor: #ffffff;
 $color2: rgba(52, 152, 219, .6);
 
 body {
@@ -72,9 +72,9 @@ body {
 	animation-duration: 2s;
 	animation-fill-mode: forwards;
 	img	{
-  	border-radius: 90px;
-	  width: 170px;
-	  height: 170px;
+  	border-radius: 150px;
+	  width: 150px;
+	  height: 180px;
 	}
 }
 
