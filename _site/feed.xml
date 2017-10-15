@@ -1,1 +1,78 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-10-14T22:34:26+02:00</updated><id>http://localhost:4000/</id><title type="html">Jerbi Ahmed</title><subtitle>Personal blog, few notes for dev things I do</subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-10-15T15:20:08+02:00</updated><id>http://localhost:4000/</id><title type="html">Jerbi Ahmed</title><subtitle>Personal blog, few notes for dev things I do</subtitle><entry><title type="html">Setting up a local Openshift Lab</title><link href="http://localhost:4000/setting-up-openshift-lab/" rel="alternate" type="text/html" title="Setting up a local Openshift Lab" /><published>2017-10-15T00:00:00+02:00</published><updated>2017-10-15T00:00:00+02:00</updated><id>http://localhost:4000/setting-up-openshift-lab</id><content type="html" xml:base="http://localhost:4000/setting-up-openshift-lab/">&lt;p&gt;This tutorial series aims to provide you with an introduction to container and container orchestration technology using Docker, Kubernetes, and Red Hat OpenShift Container Platform.&lt;/p&gt;
+
+&lt;p&gt;This DevOps Tutorial is Part 1 of my series on Red Hat Openshift. Check out the other articles:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/setting-up-openshift-lab&quot;&gt;Setting Up the Lab Environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Overview of the Docker Architecture&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Managing the Life Cycle of Containers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Building Custom Container Images with Dockerfile&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Creating Kubernetes Resources&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Creating Applications with Source-to-Image facility of Red Hat OpenShift&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;setting-up-the-lab-environment&quot;&gt;Setting Up the Lab Environment&lt;/h1&gt;
+
+&lt;p&gt;This serie includes a number of guided exercises, which give you an opportunity to practice the skills you are learning. To complete these exercises, you need to configure a practice environment that you completely control.&lt;/p&gt;
+
+&lt;p&gt;The installation of the lab environment consists of the following tasks:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Install Oracle VirtualBox to serve as a virtualization manager for Red Hat CDK .&lt;/li&gt;
+  &lt;li&gt;Install Red Hat CDK 3.&lt;/li&gt;
+  &lt;li&gt;Verify the installation by starting an OpenShift cluster.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;install-oracle-virtualbox&quot;&gt;Install Oracle VirtualBox&lt;/h2&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget -q -O- http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc | sudo apt-key add -
+sh -c &lt;span class=&quot;s1&quot;&gt;'echo &quot;deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib&quot; | sudo tee /etc/apt/sources.list.d/virtualbox.list'&lt;/span&gt;
+sudo apt update
+sudo apt-get install virtualbox-5.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;install-red-hat-cdk-3&quot;&gt;Install RED HAT CDK 3&lt;/h2&gt;
+
+&lt;p&gt;Download the Red Hat Container Development Kit 3 from &lt;a href=&quot;https://developers.redhat.com/products/cdk/download&quot;&gt;here&lt;/a&gt;, you may need to login or to create a Red Hat developer account if you don’t have one already.&lt;br /&gt;
+Download the appropriate package for the operating system then rename the downloaded file to &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;minishift​&lt;/code&gt;&lt;/strong&gt; and copy the binary file to &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bin&lt;/code&gt;​&lt;/strong&gt; or another directory that is accessible in your command-shell path.&lt;br /&gt;
+On Windows rename your file to &lt;strong&gt;minishift.exe&lt;/strong&gt; and add its directory to path env variable.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo mv cdk-3.1.1-1-minishift-linux-amd64 /usr/local/bin/minishift
+sudo chmod +x /usr/local/bin/minishift
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;configure-and-run-openshift&quot;&gt;Configure and run Openshift&lt;/h2&gt;
+
+&lt;p&gt;First we need to change two persistent configuration options as we will use the virtualbox driver and will allocate 2 GB of RAM which should be enough for our lab.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-linux&quot;&gt;On linux&lt;/h3&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;minishift setup-cdk
+minishift config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;vm-driver virtualbox
+minishift config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;memory 2048
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;on-windows&quot;&gt;On windows&lt;/h3&gt;
+
+&lt;p&gt;Open a powershell and browse to minishift.exe path then run it.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;c:/minishift
+./minishift.exe setup-cdk
+./minishift.exe config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;vm-driver virtualbox
+./minishift.exe config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;memory 2048
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;The minishift config​ command may issue a warning message, “No Minishift instance exists…”.
+This message can safely be ignored.&lt;br /&gt;
+Execute the following command to start an OpenShift cluster when prompted enter your Red Hat developer account credentials.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-linux-1&quot;&gt;On linux&lt;/h3&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;minishift start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h3 id=&quot;on-windows-1&quot;&gt;On Windows&lt;/h3&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./minishift.exe start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="Openshift" /><category term="Ubuntu" /><category term="Debian" /><category term="Windows" /><category term="Orchestration" /><category term="DevOps" /><summary type="html">Openshift installation instruction</summary></entry></feed>

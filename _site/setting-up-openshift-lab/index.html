@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Setting up a local Openshift Lab – Jerbi Ahmed</title>
+    <meta name="description" content="Openshift installation instruction">
+    <meta name="keywords" content="Openshift, Ubuntu, Debian, Windows, Orchestration, DevOps">
+    <link rel="canonical" href="http://localhost:4000/setting-up-openshift-lab/">
+        <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Setting up a local Openshift Lab">
+    <meta name="twitter:description" content="Openshift installation instruction">
+    <meta name="twitter:site" content="@jerbi_ahmed_">
+    <meta name="twitter:creator" content="@jerbi_ahmed_">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="http://localhost:4000/assets/img/profile.png">
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Setting up a local Openshift Lab">
+    <meta property="og:description" content="Openshift installation instruction">
+    <meta property="og:url" content="http://localhost:4000/setting-up-openshift-lab/">
+    <meta property="og:site_name" content="Jerbi Ahmed">
+    <meta property="og:image" content="http://localhost:4000/assets/img/profile.png">
+
+    
+    
+    <!-- Handheld -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://localhost:4000/assets/img/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/assets/img/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/assets/img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/assets/img/favicon/apple-touch-icon-144x144.png">
+    <link rel="icon" type="image/png" href="http://localhost:4000/assets/img/favicon/favicon.png">
+    <link rel="shortcut icon" href="http://localhost:4000/assets/img/favicon/favicon.ico">
+    <!-- Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Jerbi Ahmed" href="http://localhost:4000/feed.xml">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/main.css">
+</head>
+
+  <body>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        i = 0;
+        $('.menuAc').css({
+          'color': 'rgba(52, 152, 219, 1)'
+        });
+        $('.menuAc').click(function(){
+          $(this).next('.menuMobil').animate({width:'toggle'},350);
+          if (i%2==0) {
+            $('.footer').css({
+              'filter'         : 'blur(5px)'
+            });
+            $('.yazilar').css({
+              'filter'         : 'blur(5px)'
+            });
+            $('.ust').css({
+              'filter'         : 'blur(5px)'
+            });
+            $('ul.menu').css({
+              'animation-duration': '0.1s'
+            });
+            i++;
+          }
+          else {
+            $('.footer').css({
+              'filter'         : 'blur(0px)'
+            });
+            $('.yazilar').css({
+              'filter'         : 'blur(0px)'
+            });
+            $('.ust').css({
+              'filter'         : 'blur(0px)'
+            });
+            i++;
+          }
+
+        });
+      });
+    </script>
+    <div class="menuAc">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <div class="menuMobil">
+          <nav class="nav-home">
+      <ul class="menu">
+            
+				    
+				    <li><a class="link" href="http://localhost:4000/">Home</a></li>
+				
+				    
+				    <li><a class="link" href="http://localhost:4000/blog/">Blog</a></li>
+				
+				    
+				    <li><a class="link" href="http://localhost:4000/projects/">Projects</a></li>
+				
+				    
+				    <li><a class="link" href="http://localhost:4000/about/">About</a></li>
+				
+        </ul>
+    </nav>
+
+    </div>
+    <div class="ust">
+      <div class="ortalaAna">
+        <div class="baslikAna">
+          Jerbi Ahmed
+        </div>
+
+        <div class="pc">
+              <nav class="nav">
+        <ul class="menuAna">
+            
+				    
+				    <li class="item"><a class="link" href="http://localhost:4000/">Home</a></li>
+				
+				    
+				    <li class="item"><a class="link" href="http://localhost:4000/blog/">Blog</a></li>
+				
+				    
+				    <li class="item"><a class="link" href="http://localhost:4000/projects/">Projects</a></li>
+				
+				    
+				    <li class="item"><a class="link" href="http://localhost:4000/about/">About</a></li>
+				
+        </ul>
+    </nav>
+
+        </div>
+      </div>
+    </div>
+    <div class="ortalaAna">
+      <div class="yazilar">
+        <div class="yazi">
+          <div class="ustr">
+            <h2>Setting up a local Openshift Lab</h2>
+            <div class="yazibilgisi">
+              15 Oct 2017.
+            </div>
+          </div>
+          <hr>
+          <div class="content">
+            
+<p>This tutorial series aims to provide you with an introduction to container and container orchestration technology using Docker, Kubernetes, and Red Hat OpenShift Container Platform.</p>
+
+<p>This DevOps Tutorial is Part 1 of my series on Red Hat Openshift. Check out the other articles:</p>
+<ol>
+  <li><a href="https://jerbiahmed.github.io/setting-up-openshift-lab">Setting Up the Lab Environment</a></li>
+  <li><a href="/">Overview of the Docker Architecture</a></li>
+  <li><a href="/">Managing the Life Cycle of Containers</a></li>
+  <li><a href="/">Building Custom Container Images with Dockerfile</a></li>
+  <li><a href="/">Creating Kubernetes Resources</a></li>
+  <li><a href="/">Creating Applications with Source-to-Image facility of Red Hat OpenShift</a></li>
+</ol>
+
+<h1 id="setting-up-the-lab-environment">Setting Up the Lab Environment</h1>
+
+<p>This serie includes a number of guided exercises, which give you an opportunity to practice the skills you are learning. To complete these exercises, you need to configure a practice environment that you completely control.</p>
+
+<p>The installation of the lab environment consists of the following tasks:</p>
+<ol>
+  <li>Install Oracle VirtualBox to serve as a virtualization manager for Red Hat CDK .</li>
+  <li>Install Red Hat CDK 3.</li>
+  <li>Verify the installation by starting an OpenShift cluster.</li>
+</ol>
+
+<h2 id="install-oracle-virtualbox">Install Oracle VirtualBox</h2>
+
+<div class="language-shell highlighter-rouge">
+<pre class="highlight"><code>wget -q -O- http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc | sudo apt-key add -
+sh -c <span class="s1">'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list'</span>
+sudo apt update
+sudo apt-get install virtualbox-5.1
+</code></pre>
+</div>
+<h2 id="install-red-hat-cdk-3">Install RED HAT CDK 3</h2>
+
+<p>Download the Red Hat Container Development Kit 3 from <a href="https://developers.redhat.com/products/cdk/download">here</a>, you may need to login or to create a Red Hat developer account if you don’t have one already.<br>
+Download the appropriate package for the operating system then rename the downloaded file to <strong><code class="highlighter-rouge">minishift​</code></strong> and copy the binary file to <strong><code class="highlighter-rouge">/usr/local/bin</code>​</strong> or another directory that is accessible in your command-shell path.<br>
+On Windows rename your file to <strong>minishift.exe</strong> and add its directory to path env variable.</p>
+
+<div class="language-shell highlighter-rouge">
+<pre class="highlight"><code>sudo mv cdk-3.1.1-1-minishift-linux-amd64 /usr/local/bin/minishift
+sudo chmod +x /usr/local/bin/minishift
+</code></pre>
+</div>
+
+<h2 id="configure-and-run-openshift">Configure and run Openshift</h2>
+
+<p>First we need to change two persistent configuration options as we will use the virtualbox driver and will allocate 2 GB of RAM which should be enough for our lab.</p>
+
+<h3 id="on-linux">On linux</h3>
+
+<div class="language-shell highlighter-rouge">
+<pre class="highlight"><code>minishift setup-cdk
+minishift config <span class="nb">set </span>vm-driver virtualbox
+minishift config <span class="nb">set </span>memory 2048
+</code></pre>
+</div>
+
+<h3 id="on-windows">On windows</h3>
+
+<p>Open a powershell and browse to minishift.exe path then run it.</p>
+
+<div class="language-shell highlighter-rouge">
+<pre class="highlight"><code><span class="nb">cd </span>c:/minishift
+./minishift.exe setup-cdk
+./minishift.exe config <span class="nb">set </span>vm-driver virtualbox
+./minishift.exe config <span class="nb">set </span>memory 2048
+</code></pre>
+</div>
+<p>The minishift config​ command may issue a warning message, “No Minishift instance exists…”.
+This message can safely be ignored.<br>
+Execute the following command to start an OpenShift cluster when prompted enter your Red Hat developer account credentials.</p>
+
+<h3 id="on-linux-1">On linux</h3>
+
+<div class="language-shell highlighter-rouge">
+<pre class="highlight"><code>minishift start
+</code></pre>
+</div>
+<h3 id="on-windows-1">On Windows</h3>
+
+<div class="language-shell highlighter-rouge">
+<pre class="highlight"><code>./minishift.exe start
+</code></pre>
+</div>
+
+
+          </div>
+        </div>
+        <script src="http://localhost:4000/assets/js/jquery-1.12.2.min.js"></script>
+<script src="http://localhost:4000/assets/js/jquery.goup.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $.goup({
+        trigger: 500,
+        bottomOffset: 10,
+        locationOffset: 20,
+        containerRadius: 0,
+        containerColor: '#fff',
+        arrowColor: '#000',
+        goupSpeed: 'normal'
+    });
+});
+</script>
+
+
+        
+  <div id="disqus_thread" class="yazi">  </div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://ahmedjerbi.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+  <script id="dsq-count-scr" src="//ahmedjerbi.disqus.com/count.js" async></script>
+
+
+      </div>
+    </div>
+        <div class="footer">
+      <div class="ortalaAna">
+        <div class="copy">
+          Jerbi Ahmed © 2017
+        </div>
+        <div class="sosyal">
+                        <div class="social-links">
+                  <a href="mailto:jerbiahmed@outlook.com" class="author-social" target="_blank"><i class="fa fa-2x fa-envelope-square"></i></a>
+                  <a href="http://twitter.com/jerbi_ahmed_" class="author-social" target="_blank"><i class="fa fa-2x fa-twitter-square"></i></a>
+                  <a href="http://facebook.com/jerbia7med" class="author-social" target="_blank"><i class="fa fa-2x fa-facebook-square"></i></a>
+                  
+                  <a href="http://linkedin.com/in/jerbiahmed" class="author-social" target="_blank"><i class="fa fa-2x fa-linkedin-square"></i></a>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
