@@ -5,12 +5,12 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Setting up a local Openshift Lab – Jerbi Ahmed</title>
+    <title>Setting Up A Local OpenShift Lab – Jerbi Ahmed</title>
     <meta name="description" content="Openshift installation instruction">
     <meta name="keywords" content="Openshift, Ubuntu, Debian, Windows, Orchestration, DevOps">
     <link rel="canonical" href="http://localhost:4000/setting-up-openshift-lab/">
         <!-- Twitter Cards -->
-    <meta name="twitter:title" content="Setting up a local Openshift Lab">
+    <meta name="twitter:title" content="Setting Up A Local OpenShift Lab">
     <meta name="twitter:description" content="Openshift installation instruction">
     <meta name="twitter:site" content="@jerbi_ahmed_">
     <meta name="twitter:creator" content="@jerbi_ahmed_">
@@ -19,7 +19,7 @@
     <!-- Open Graph -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Setting up a local Openshift Lab">
+    <meta property="og:title" content="Setting Up A Local OpenShift Lab">
     <meta property="og:description" content="Openshift installation instruction">
     <meta property="og:url" content="http://localhost:4000/setting-up-openshift-lab/">
     <meta property="og:site_name" content="Jerbi Ahmed">
@@ -140,7 +140,7 @@
       <div class="yazilar">
         <div class="yazi">
           <div class="ustr">
-            <h2>Setting up a local Openshift Lab</h2>
+            <h2>Setting Up A Local OpenShift Lab</h2>
             <div class="yazibilgisi">
               15 Oct 2017.
             </div>
@@ -150,14 +150,15 @@
             
 <p>This tutorial series aims to provide you with an introduction to container and container orchestration technology using Docker, Kubernetes, and Red Hat OpenShift Container Platform.</p>
 
-<p>This DevOps Tutorial is Part 1 of my series on Red Hat Openshift. Check out the other articles:</p>
+<p>This tutorial is Part 1 of my series on Red Hat Openshift. Check out the other articles:</p>
 <ol>
-  <li><a href="https://jerbiahmed.github.io/setting-up-openshift-lab">Setting Up the Lab Environment</a></li>
-  <li><a href="/">Overview of the Docker Architecture</a></li>
-  <li><a href="/">Managing the Life Cycle of Containers</a></li>
-  <li><a href="/">Building Custom Container Images with Dockerfile</a></li>
-  <li><a href="/">Creating Kubernetes Resources</a></li>
-  <li><a href="/">Creating Applications with Source-to-Image facility of Red Hat OpenShift</a></li>
+  <li><a href="https://jerbiahmed.github.io/introduction">Fundamentals of Containers, Kubernetes, and Red Hat OpenShift : Tutorial introduction</a></li>
+  <li><a href="https://jerbiahmed.github.io/setting-up-openshift-lab"><span style="color:red">Setting Up the Lab Environment</span></a></li>
+  <li><a href="https://jerbiahmed.github.io/">Overview of the Docker Architecture</a></li>
+  <li><a href="https://jerbiahmed.github.io/">Managing the Life Cycle of Containers</a></li>
+  <li><a href="https://jerbiahmed.github.io/">Building Custom Container Images with Dockerfile</a></li>
+  <li><a href="https://jerbiahmed.github.io/">Creating Kubernetes Resources</a></li>
+  <li><a href="https://jerbiahmed.github.io/">Creating Applications with Source-to-Image facility of Red Hat OpenShift</a></li>
 </ol>
 
 <h1 id="setting-up-the-lab-environment">Setting Up the Lab Environment</h1>
@@ -168,7 +169,8 @@
 <ol>
   <li>Install Oracle VirtualBox to serve as a virtualization manager for Red Hat CDK .</li>
   <li>Install Red Hat CDK 3.</li>
-  <li>Verify the installation by starting an OpenShift cluster.</li>
+  <li>Install OpenShift Origin CLI</li>
+  <li>Starting an OpenShift cluster.</li>
 </ol>
 
 <h2 id="install-oracle-virtualbox">Install Oracle VirtualBox</h2>
@@ -183,8 +185,9 @@ sudo apt-get install virtualbox-5.1
 <h2 id="install-red-hat-cdk-3">Install RED HAT CDK 3</h2>
 
 <p>Download the Red Hat Container Development Kit 3 from <a href="https://developers.redhat.com/products/cdk/download">here</a>, you may need to login or to create a Red Hat developer account if you don’t have one already.<br>
-Download the appropriate package for the operating system then rename the downloaded file to <strong><code class="highlighter-rouge">minishift​</code></strong> and copy the binary file to <strong><code class="highlighter-rouge">/usr/local/bin</code>​</strong> or another directory that is accessible in your command-shell path.<br>
-On Windows rename your file to <strong>minishift.exe</strong> and add its directory to path env variable.</p>
+Download the appropriate package for the operating system then rename the downloaded file to <strong><code class="highlighter-rouge">minishift​</code></strong> and copy the binary file to <strong><code class="highlighter-rouge">/usr/local/bin</code>​</strong> or another directory that is accessible in your command-shell path.</p>
+
+<h3 id="on-linux">On Linux</h3>
 
 <div class="language-shell highlighter-rouge">
 <pre class="highlight"><code>sudo mv cdk-3.1.1-1-minishift-linux-amd64 /usr/local/bin/minishift
@@ -192,11 +195,37 @@ sudo chmod +x /usr/local/bin/minishift
 </code></pre>
 </div>
 
+<h3 id="on-windows">On Windows</h3>
+
+<p>Rename your file to <strong>minishift.exe</strong> and add its directory to path env variable.</p>
+
+<h2 id="install-openshift-origin-cli">Install OpenShift Origin CLI</h2>
+
+<p>Get the last release of OpenShift Origin client from its <a href="https://github.com/openshift/origin/releases">GitHub repository</a>.</p>
+
+<p class="image-pull-right"><img src="./../assets/img/01-OC_origin_CLI.png" alt="jekyll Image"></p>
+
+<p>Unpack the package for your OS , rename the oc binary and add it to system path.</p>
+
+<h3 id="on-linux-1">On Linux</h3>
+
+<div class="language-shell highlighter-rouge">
+<pre class="highlight"><code>tar -xzf openshift-origin-client-tools-v3.6.0-c4dd4cf-linux-64bit.tar.gz -C .
+<span class="nb">cd </span>openshift-origin-client-tools-v3.6.0-c4dd4cf-linux-64bit/
+sudo mv oc /usr/local/bin/oc
+sudo chmod +x /usr/local/bin/oc
+</code></pre>
+</div>
+
+<h3 id="on-windows-1">On Windows</h3>
+
+<p>Unpack, rename your file to <strong>oc.exe</strong> then place it in the same directory as minishift.exe.</p>
+
 <h2 id="configure-and-run-openshift">Configure and run Openshift</h2>
 
 <p>First we need to change two persistent configuration options as we will use the virtualbox driver and will allocate 2 GB of RAM which should be enough for our lab.</p>
 
-<h3 id="on-linux">On linux</h3>
+<h3 id="on-linux-2">On Linux</h3>
 
 <div class="language-shell highlighter-rouge">
 <pre class="highlight"><code>minishift setup-cdk
@@ -205,7 +234,7 @@ minishift config <span class="nb">set </span>memory 2048
 </code></pre>
 </div>
 
-<h3 id="on-windows">On windows</h3>
+<h3 id="on-windows-2">On Windows</h3>
 
 <p>Open a powershell and browse to minishift.exe path then run it.</p>
 
@@ -220,18 +249,49 @@ minishift config <span class="nb">set </span>memory 2048
 This message can safely be ignored.<br>
 Execute the following command to start an OpenShift cluster when prompted enter your Red Hat developer account credentials.</p>
 
-<h3 id="on-linux-1">On linux</h3>
+<h3 id="on-linux-3">On Linux</h3>
 
 <div class="language-shell highlighter-rouge">
 <pre class="highlight"><code>minishift start
 </code></pre>
 </div>
-<h3 id="on-windows-1">On Windows</h3>
+<h3 id="on-windows-3">On Windows</h3>
 
 <div class="language-shell highlighter-rouge">
 <pre class="highlight"><code>./minishift.exe start
+
+Starting <span class="nb">local </span>OpenShift cluster using <span class="s1">'virtualbox'</span> hypervisor...
+Registering machine using subscription-manager
+Red Hat Developers or Red Hat Subscription Management <span class="o">(</span>RHSM<span class="o">)</span> username: jerbia7med
+Red Hat Developers or Red Hat Subscription Management <span class="o">(</span>RHSM<span class="o">)</span> password: <span class="o">[</span>HIDDEN]
+Registration successful <span class="o">[</span>53.4s]
+Starting OpenShift using registry.access.redhat.com/openshift3/ose:v3.6.173.0.5 ...
+OpenShift server started.
+
+The server is accessible via web console at:
+    https://192.168.99.100:8443
 </code></pre>
 </div>
+
+<p>Your local OpenShift server is now up and running,you can check its web console by browsing to https://192.168.99.100:8443 .</p>
+
+<p>Now that we verified our installation is OK let’s stop the cluster and reduce some memory usage, I know your computer is overheating <img class="emoji" title=":fire:" alt=":fire:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f525.png" height="20" width="20"><img class="emoji" title=":fire:" alt=":fire:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f525.png" height="20" width="20"><img class="emoji" title=":fire:" alt=":fire:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f525.png" height="20" width="20"></p>
+
+<h3 id="on-linux-4">On Linux</h3>
+
+<div class="language-shell highlighter-rouge">
+<pre class="highlight"><code>minishift stop
+</code></pre>
+</div>
+<h3 id="on-windows-4">On Windows</h3>
+
+<div class="language-shell highlighter-rouge">
+<pre class="highlight"><code>./minishift.exe stop
+</code></pre>
+</div>
+
+<p>Our lab is ready,the next article in this tutorial series will explore the <a href="https://jerbiahmed.github.io/">Docker architecture</a>.<br>
+Ready? <a href="https://jerbiahmed.github.io/">Click here</a>!</p>
 
 
           </div>

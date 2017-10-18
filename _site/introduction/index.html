@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fundamentals of Containers, Kubernetes, and Red Hat OpenShift – Jerbi Ahmed</title>
+    <meta name="description" content="Openshift fundamentals introduction">
+    <meta name="keywords" content="Openshift, Kubernetes, Docker, Orchestration, DevOps">
+    <link rel="canonical" href="http://localhost:4000/introduction/">
+        <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Fundamentals of Containers, Kubernetes, and Red Hat OpenShift">
+    <meta name="twitter:description" content="Openshift fundamentals introduction">
+    <meta name="twitter:site" content="@jerbi_ahmed_">
+    <meta name="twitter:creator" content="@jerbi_ahmed_">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="http://localhost:4000/assets/img/profile.png">
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Fundamentals of Containers, Kubernetes, and Red Hat OpenShift">
+    <meta property="og:description" content="Openshift fundamentals introduction">
+    <meta property="og:url" content="http://localhost:4000/introduction/">
+    <meta property="og:site_name" content="Jerbi Ahmed">
+    <meta property="og:image" content="http://localhost:4000/assets/img/profile.png">
+
+    
+    
+    <!-- Handheld -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://localhost:4000/assets/img/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/assets/img/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/assets/img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/assets/img/favicon/apple-touch-icon-144x144.png">
+    <link rel="icon" type="image/png" href="http://localhost:4000/assets/img/favicon/favicon.png">
+    <link rel="shortcut icon" href="http://localhost:4000/assets/img/favicon/favicon.ico">
+    <!-- Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Jerbi Ahmed" href="http://localhost:4000/feed.xml">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/main.css">
+</head>
+
+  <body>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        i = 0;
+        $('.menuAc').css({
+          'color': 'rgba(52, 152, 219, 1)'
+        });
+        $('.menuAc').click(function(){
+          $(this).next('.menuMobil').animate({width:'toggle'},350);
+          if (i%2==0) {
+            $('.footer').css({
+              'filter'         : 'blur(5px)'
+            });
+            $('.yazilar').css({
+              'filter'         : 'blur(5px)'
+            });
+            $('.ust').css({
+              'filter'         : 'blur(5px)'
+            });
+            $('ul.menu').css({
+              'animation-duration': '0.1s'
+            });
+            i++;
+          }
+          else {
+            $('.footer').css({
+              'filter'         : 'blur(0px)'
+            });
+            $('.yazilar').css({
+              'filter'         : 'blur(0px)'
+            });
+            $('.ust').css({
+              'filter'         : 'blur(0px)'
+            });
+            i++;
+          }
+
+        });
+      });
+    </script>
+    <div class="menuAc">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <div class="menuMobil">
+          <nav class="nav-home">
+      <ul class="menu">
+            
+				    
+				    <li><a class="link" href="http://localhost:4000/">Home</a></li>
+				
+				    
+				    <li><a class="link" href="http://localhost:4000/blog/">Blog</a></li>
+				
+				    
+				    <li><a class="link" href="http://localhost:4000/projects/">Projects</a></li>
+				
+				    
+				    <li><a class="link" href="http://localhost:4000/about/">About</a></li>
+				
+        </ul>
+    </nav>
+
+    </div>
+    <div class="ust">
+      <div class="ortalaAna">
+        <div class="baslikAna">
+          Jerbi Ahmed
+        </div>
+
+        <div class="pc">
+              <nav class="nav">
+        <ul class="menuAna">
+            
+				    
+				    <li class="item"><a class="link" href="http://localhost:4000/">Home</a></li>
+				
+				    
+				    <li class="item"><a class="link" href="http://localhost:4000/blog/">Blog</a></li>
+				
+				    
+				    <li class="item"><a class="link" href="http://localhost:4000/projects/">Projects</a></li>
+				
+				    
+				    <li class="item"><a class="link" href="http://localhost:4000/about/">About</a></li>
+				
+        </ul>
+    </nav>
+
+        </div>
+      </div>
+    </div>
+    <div class="ortalaAna">
+      <div class="yazilar">
+        <div class="yazi">
+          <div class="ustr">
+            <h2>Fundamentals of Containers, Kubernetes, and Red Hat OpenShift</h2>
+            <div class="yazibilgisi">
+              15 Oct 2017.
+            </div>
+          </div>
+          <hr>
+          <div class="content">
+            
+<p>Hello world!</p>
+
+<p>This serie will provide you with an introduction to container and container orchestration technology using Docker, Kubernetes, and Red Hat OpenShift Container Platform.<br>
+You will learn how to containerize applications, test them using Docker, and deploy them on a Kubernetes cluster using Red Hat OpenShift.<br>
+Additionally, you will build and deploy an application from source code using the Source-to-Image feature of OpenShift.</p>
+
+<p>This tutorial is the introductory part of my series on Red Hat Openshift. Check out the other articles:</p>
+<ol>
+  <li><a href="https://jerbiahmed.github.io/introduction"><span style="color:red">Fundamentals of Containers, Kubernetes, and Red Hat OpenShift : Tutorial introduction</span></a></li>
+  <li><a href="https://jerbiahmed.github.io/setting-up-openshift-lab">Setting Up the Lab Environment</a></li>
+  <li><a href="https://jerbiahmed.github.io/">Overview of the Docker Architecture</a></li>
+  <li><a href="https://jerbiahmed.github.io/">Managing the Life Cycle of Containers</a></li>
+  <li><a href="https://jerbiahmed.github.io/">Building Custom Container Images with Dockerfile</a></li>
+  <li><a href="https://jerbiahmed.github.io/">Creating Kubernetes Resources</a></li>
+  <li><a href="https://jerbiahmed.github.io/">Creating Applications with Source-to-Image facility of Red Hat OpenShift</a></li>
+</ol>
+
+<p><img class="emoji" title=":exclamation:" alt=":exclamation:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2757.png" height="20" width="20"> <span style="color:red"> <strong>Spoiler Alert</strong></span><br>
+<span style="color:red"> This part may seem very annoying if you’re new to Docker and Kubernetes <img class="emoji" title=":sleeping:" alt=":sleeping:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f634.png" height="20" width="20">.<br>
+Thus, it contains many definitions and concepts about the overall architecture .. just try read them quickly then come back here as you move on through the serie. </span></p>
+
+<p>Before we get our hands dirty we need to have some understanding of the global OpenShift architecture.</p>
+
+<h2 id="containerized-applications">Containerized Applications</h2>
+
+<p>Software applications are typically deployed to an operating system with a set of services running, such as a database server or an HTTP server, but they can also be deployed to any environment that can provide the same services, such as a virtual machine or a physical host.<br>
+If another application is sharing the same host OS and the same set of libraries, there might be a risk of breaking it if an update that fixes the first application libraries affects the second application.<br>
+For a company developing typical software applications, any maintenance on the running environment might require a full set of tests to guarantee that any OS update does not affect the application as well.<br>
+Depending on the complexity of an application, the regression verification might not be an easy task and might require a major project.</p>
+
+<p>Alternatively, we can work with containers, which are a kind of isolated partition inside a single operating system.<br>
+Containers provide many of the same benefits as virtual machines, such as security, storage, and network isolation, while requiring far fewer hardware resources and being quicker to launch and terminate.</p>
+
+<p class="image-pull-right"><img src="./../assets/img/02-containers_versus_vm.jpg" alt="jekyll Image"></p>
+
+<p>They also isolate the libraries and the runtime environment (such as CPU and storage) used by an application to minimize the impact of any OS update to the host OS, as described in the previous diagram.</p>
+
+<p>There are many container providers available, such as Rocket, Drawbridge, and LXC, but the major provider is Docker.</p>
+
+<h3 id="advantages-of-docker">Advantages of Docker</h3>
+
+<p><strong>Low hardware usage</strong><br>
+Docker uses OS internal features to create an isolated environment where resources are managed using OS facilities such as namespaces which minimizes the amount of CPU and memory overhead.</p>
+
+<p><strong>Environment isolation</strong><br>
+Docker allows working in a closed environment where changes made to the host OS or other applications do not affect the container.</p>
+
+<p><strong>Quick deployment</strong><br>
+Docker deploys any container quickly because there is no need for a full OS install or restart.</p>
+
+<p><strong>Reusability</strong><br>
+The same container can be reused by multiple applications without the need to set up a full OS.</p>
+
+<h2 id="openshift-and-kubernetes-terminology">OpenShift and Kubernetes Terminology</h2>
+
+<p>Red Hat OpenShift Container Platform (OCP) is a set of components and services built on top of RHEL and Docker.<br>
+OCP adds capabilities such as remote management, increased security, application life-cycle management, and self-service interfaces for developers.</p>
+
+<p class="image-pull-right"><img src="./../assets/img/03-openshift_architecture.png" alt="jekyll Image"></p>
+
+<p>The basic container infrastructure is shown in the figure above:</p>
+
+<ul>
+  <li>The base OS is Red Hat Enterprise Linux (RHEL).</li>
+  <li>Docker provides the basic container management and the container image file format.</li>
+  <li>Kubernetes manages a cluster of hosts (physical or virtual) that run containers. It works with resources that describe multicontainer applications and how they interconnect.</li>
+  <li>OCP-Kubernetes extensions are additional resource types managed by Kubernetes.</li>
+  <li>Containerized services fulfill many infrastructure functions, such as networking and authorization.</li>
+  <li>Runtimes and xPaaS are base container images ready for use by developers, each preconfigured with a particular runtime language or database.</li>
+  <li>DevOps tools and user experience provides Web and CLI management tools for managing user applications and OCP services. The OpenShift Web and CLI tools are built from REST APIs which can be leveraged by external tools such as IDEs and CI platforms.</li>
+</ul>
+
+<h3 id="kubernetes-resource-types">Kubernetes Resource Types</h3>
+
+<p>Kubernetes has five main resource types that can be created and configured using a YAML or a JSON file, or using OpenShift management tools:</p>
+
+<p><strong>Pods</strong><br>
+Represent a collection of containers that share resources, such as IP addresses and persistent storage volumes. It is the basic unit of work for Kubernetes.<br>
+<strong>Services</strong><br>
+Define a single IP/port combination that provides access to a pool of pods. By default, services connect clients to pods in a round-robin fashion.<br>
+<strong>Replication Controllers</strong><br>
+A framework for defining pods that are meant to be horizontally scaled. A replication controller includes a pod definition that is to be replicated, and the pods created from it can be scheduled to different nodes.<br>
+<strong>Persistent Volumes (PV)</strong><br>
+Provision persistent networked storage to pods that can be mounted inside a container to store data.<br>
+<strong>Persistent Volume Claims (PVC)</strong><br>
+Represent a request for storage by a pod to Kubernetes.</p>
+
+<h3 id="openshift-resource-types">OpenShift Resource Types</h3>
+
+<p>The main resource types added by OCP to Kubernetes are as follows:</p>
+
+<p><strong>Deployment Configurations (dc)</strong><br>
+Represent a set of pods created from the same container image, managing workflows such as rolling updates.<br>
+A dc also provides a basic but extensible Continuous Delivery workflow.<br>
+<strong>Build Configurations (bc)</strong><br>
+Used by the OpenShift Source-to-Image (S2I) feature to build a container image from application source code stored in a Git server.<br>
+A bc works together with a dc to provide a basic but extensible Continuous Integration/Continuous Delivery workflow.<br>
+<strong>Routes</strong><br>
+Represent a DNS host name recognized by the OpenShift router as an ingress point for applications and microservices.</p>
+
+<p><br><br>
+Here we’ve finally finished this chapter <img class="emoji" title=":triumph:" alt=":triumph:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f624.png" height="20" width="20"><br>
+Let’s put this into practice and <a href="https://jerbiahmed.github.io/setting-up-openshift-lab">set up a local lab</a>.</p>
+
+
+          </div>
+        </div>
+        <script src="http://localhost:4000/assets/js/jquery-1.12.2.min.js"></script>
+<script src="http://localhost:4000/assets/js/jquery.goup.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $.goup({
+        trigger: 500,
+        bottomOffset: 10,
+        locationOffset: 20,
+        containerRadius: 0,
+        containerColor: '#fff',
+        arrowColor: '#000',
+        goupSpeed: 'normal'
+    });
+});
+</script>
+
+
+        
+  <div id="disqus_thread" class="yazi">  </div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://ahmedjerbi.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+  <script id="dsq-count-scr" src="//ahmedjerbi.disqus.com/count.js" async></script>
+
+
+      </div>
+    </div>
+        <div class="footer">
+      <div class="ortalaAna">
+        <div class="copy">
+          Jerbi Ahmed © 2017
+        </div>
+        <div class="sosyal">
+                        <div class="social-links">
+                  <a href="mailto:jerbiahmed@outlook.com" class="author-social" target="_blank"><i class="fa fa-2x fa-envelope-square"></i></a>
+                  <a href="http://twitter.com/jerbi_ahmed_" class="author-social" target="_blank"><i class="fa fa-2x fa-twitter-square"></i></a>
+                  <a href="http://facebook.com/jerbia7med" class="author-social" target="_blank"><i class="fa fa-2x fa-facebook-square"></i></a>
+                  
+                  <a href="http://linkedin.com/in/jerbiahmed" class="author-social" target="_blank"><i class="fa fa-2x fa-linkedin-square"></i></a>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

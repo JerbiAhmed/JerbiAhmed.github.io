@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-10-15T15:20:08+02:00</updated><id>http://localhost:4000/</id><title type="html">Jerbi Ahmed</title><subtitle>Personal blog, few notes for dev things I do</subtitle><entry><title type="html">Setting up a local Openshift Lab</title><link href="http://localhost:4000/setting-up-openshift-lab/" rel="alternate" type="text/html" title="Setting up a local Openshift Lab" /><published>2017-10-15T00:00:00+02:00</published><updated>2017-10-15T00:00:00+02:00</updated><id>http://localhost:4000/setting-up-openshift-lab</id><content type="html" xml:base="http://localhost:4000/setting-up-openshift-lab/">&lt;p&gt;This tutorial series aims to provide you with an introduction to container and container orchestration technology using Docker, Kubernetes, and Red Hat OpenShift Container Platform.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-10-18T16:01:10+02:00</updated><id>http://localhost:4000/</id><title type="html">Jerbi Ahmed</title><subtitle>Personal blog, few notes for dev things I do</subtitle><entry><title type="html">Setting Up A Local OpenShift Lab</title><link href="http://localhost:4000/setting-up-openshift-lab/" rel="alternate" type="text/html" title="Setting Up A Local OpenShift Lab" /><published>2017-10-15T00:00:00+02:00</published><updated>2017-10-15T00:00:00+02:00</updated><id>http://localhost:4000/setting-up-openshift-lab</id><content type="html" xml:base="http://localhost:4000/setting-up-openshift-lab/">&lt;p&gt;This tutorial series aims to provide you with an introduction to container and container orchestration technology using Docker, Kubernetes, and Red Hat OpenShift Container Platform.&lt;/p&gt;
 
-&lt;p&gt;This DevOps Tutorial is Part 1 of my series on Red Hat Openshift. Check out the other articles:&lt;/p&gt;
+&lt;p&gt;This tutorial is Part 1 of my series on Red Hat Openshift. Check out the other articles:&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/setting-up-openshift-lab&quot;&gt;Setting Up the Lab Environment&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Overview of the Docker Architecture&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Managing the Life Cycle of Containers&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Building Custom Container Images with Dockerfile&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Creating Kubernetes Resources&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Creating Applications with Source-to-Image facility of Red Hat OpenShift&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/introduction&quot;&gt;Fundamentals of Containers, Kubernetes, and Red Hat OpenShift : Tutorial introduction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/setting-up-openshift-lab&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;Setting Up the Lab Environment&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Overview of the Docker Architecture&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Managing the Life Cycle of Containers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Building Custom Container Images with Dockerfile&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Creating Kubernetes Resources&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Creating Applications with Source-to-Image facility of Red Hat OpenShift&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1 id=&quot;setting-up-the-lab-environment&quot;&gt;Setting Up the Lab Environment&lt;/h1&gt;
@@ -18,7 +19,8 @@
 &lt;ol&gt;
   &lt;li&gt;Install Oracle VirtualBox to serve as a virtualization manager for Red Hat CDK .&lt;/li&gt;
   &lt;li&gt;Install Red Hat CDK 3.&lt;/li&gt;
-  &lt;li&gt;Verify the installation by starting an OpenShift cluster.&lt;/li&gt;
+  &lt;li&gt;Install OpenShift Origin CLI&lt;/li&gt;
+  &lt;li&gt;Starting an OpenShift cluster.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;install-oracle-virtualbox&quot;&gt;Install Oracle VirtualBox&lt;/h2&gt;
@@ -32,19 +34,45 @@ sudo apt-get install virtualbox-5.1
 &lt;h2 id=&quot;install-red-hat-cdk-3&quot;&gt;Install RED HAT CDK 3&lt;/h2&gt;
 
 &lt;p&gt;Download the Red Hat Container Development Kit 3 from &lt;a href=&quot;https://developers.redhat.com/products/cdk/download&quot;&gt;here&lt;/a&gt;, you may need to login or to create a Red Hat developer account if you don’t have one already.&lt;br /&gt;
-Download the appropriate package for the operating system then rename the downloaded file to &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;minishift​&lt;/code&gt;&lt;/strong&gt; and copy the binary file to &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bin&lt;/code&gt;​&lt;/strong&gt; or another directory that is accessible in your command-shell path.&lt;br /&gt;
-On Windows rename your file to &lt;strong&gt;minishift.exe&lt;/strong&gt; and add its directory to path env variable.&lt;/p&gt;
+Download the appropriate package for the operating system then rename the downloaded file to &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;minishift​&lt;/code&gt;&lt;/strong&gt; and copy the binary file to &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bin&lt;/code&gt;​&lt;/strong&gt; or another directory that is accessible in your command-shell path.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-linux&quot;&gt;On Linux&lt;/h3&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo mv cdk-3.1.1-1-minishift-linux-amd64 /usr/local/bin/minishift
 sudo chmod +x /usr/local/bin/minishift
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
+&lt;h3 id=&quot;on-windows&quot;&gt;On Windows&lt;/h3&gt;
+
+&lt;p&gt;Rename your file to &lt;strong&gt;minishift.exe&lt;/strong&gt; and add its directory to path env variable.&lt;/p&gt;
+
+&lt;h2 id=&quot;install-openshift-origin-cli&quot;&gt;Install OpenShift Origin CLI&lt;/h2&gt;
+
+&lt;p&gt;Get the last release of OpenShift Origin client from its &lt;a href=&quot;https://github.com/openshift/origin/releases&quot;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p class=&quot;image-pull-right&quot;&gt;&lt;img src=&quot;./../assets/img/01-OC_origin_CLI.png&quot; alt=&quot;jekyll Image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Unpack the package for your OS , rename the oc binary and add it to system path.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-linux-1&quot;&gt;On Linux&lt;/h3&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tar -xzf openshift-origin-client-tools-v3.6.0-c4dd4cf-linux-64bit.tar.gz -C .
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;openshift-origin-client-tools-v3.6.0-c4dd4cf-linux-64bit/
+sudo mv oc /usr/local/bin/oc
+sudo chmod +x /usr/local/bin/oc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;on-windows-1&quot;&gt;On Windows&lt;/h3&gt;
+
+&lt;p&gt;Unpack, rename your file to &lt;strong&gt;oc.exe&lt;/strong&gt; then place it in the same directory as minishift.exe.&lt;/p&gt;
+
 &lt;h2 id=&quot;configure-and-run-openshift&quot;&gt;Configure and run Openshift&lt;/h2&gt;
 
 &lt;p&gt;First we need to change two persistent configuration options as we will use the virtualbox driver and will allocate 2 GB of RAM which should be enough for our lab.&lt;/p&gt;
 
-&lt;h3 id=&quot;on-linux&quot;&gt;On linux&lt;/h3&gt;
+&lt;h3 id=&quot;on-linux-2&quot;&gt;On Linux&lt;/h3&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;minishift setup-cdk
 minishift config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;vm-driver virtualbox
@@ -52,7 +80,7 @@ minishift config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;memory 2048
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&quot;on-windows&quot;&gt;On windows&lt;/h3&gt;
+&lt;h3 id=&quot;on-windows-2&quot;&gt;On Windows&lt;/h3&gt;
 
 &lt;p&gt;Open a powershell and browse to minishift.exe path then run it.&lt;/p&gt;
 
@@ -66,13 +94,144 @@ minishift config &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;memory 2048
 This message can safely be ignored.&lt;br /&gt;
 Execute the following command to start an OpenShift cluster when prompted enter your Red Hat developer account credentials.&lt;/p&gt;
 
-&lt;h3 id=&quot;on-linux-1&quot;&gt;On linux&lt;/h3&gt;
+&lt;h3 id=&quot;on-linux-3&quot;&gt;On Linux&lt;/h3&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;minishift start
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-&lt;h3 id=&quot;on-windows-1&quot;&gt;On Windows&lt;/h3&gt;
+&lt;h3 id=&quot;on-windows-3&quot;&gt;On Windows&lt;/h3&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./minishift.exe start
+
+Starting &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;OpenShift cluster using &lt;span class=&quot;s1&quot;&gt;'virtualbox'&lt;/span&gt; hypervisor...
+Registering machine using subscription-manager
+Red Hat Developers or Red Hat Subscription Management &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;RHSM&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; username: jerbia7med
+Red Hat Developers or Red Hat Subscription Management &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;RHSM&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; password: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;HIDDEN]
+Registration successful &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;53.4s]
+Starting OpenShift using registry.access.redhat.com/openshift3/ose:v3.6.173.0.5 ...
+OpenShift server started.
+
+The server is accessible via web console at:
+    https://192.168.99.100:8443
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="Openshift" /><category term="Ubuntu" /><category term="Debian" /><category term="Windows" /><category term="Orchestration" /><category term="DevOps" /><summary type="html">Openshift installation instruction</summary></entry></feed>
+&lt;/div&gt;
+
+&lt;p&gt;Your local OpenShift server is now up and running,you can check its web console by browsing to https://192.168.99.100:8443 .&lt;/p&gt;
+
+&lt;p&gt;Now that we verified our installation is OK let’s stop the cluster and reduce some memory usage, I know your computer is overheating :fire::fire::fire:&lt;/p&gt;
+
+&lt;h3 id=&quot;on-linux-4&quot;&gt;On Linux&lt;/h3&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;minishift stop
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h3 id=&quot;on-windows-4&quot;&gt;On Windows&lt;/h3&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./minishift.exe stop
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Our lab is ready,the next article in this tutorial series will explore the &lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Docker architecture&lt;/a&gt;.&lt;br /&gt;
+Ready? &lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Click here&lt;/a&gt;!&lt;/p&gt;</content><author><name></name></author><category term="Openshift" /><category term="Ubuntu" /><category term="Debian" /><category term="Windows" /><category term="Orchestration" /><category term="DevOps" /><summary type="html">Openshift installation instruction</summary></entry><entry><title type="html">Fundamentals of Containers, Kubernetes, and Red Hat OpenShift</title><link href="http://localhost:4000/introduction/" rel="alternate" type="text/html" title="Fundamentals of Containers, Kubernetes, and Red Hat OpenShift" /><published>2017-10-15T00:00:00+02:00</published><updated>2017-10-15T00:00:00+02:00</updated><id>http://localhost:4000/introduction</id><content type="html" xml:base="http://localhost:4000/introduction/">&lt;p&gt;Hello world!&lt;/p&gt;
+
+&lt;p&gt;This serie will provide you with an introduction to container and container orchestration technology using Docker, Kubernetes, and Red Hat OpenShift Container Platform.&lt;br /&gt;
+You will learn how to containerize applications, test them using Docker, and deploy them on a Kubernetes cluster using Red Hat OpenShift.&lt;br /&gt;
+Additionally, you will build and deploy an application from source code using the Source-to-Image feature of OpenShift.&lt;/p&gt;
+
+&lt;p&gt;This tutorial is the introductory part of my series on Red Hat Openshift. Check out the other articles:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/introduction&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;Fundamentals of Containers, Kubernetes, and Red Hat OpenShift : Tutorial introduction&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/setting-up-openshift-lab&quot;&gt;Setting Up the Lab Environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Overview of the Docker Architecture&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Managing the Life Cycle of Containers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Building Custom Container Images with Dockerfile&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Creating Kubernetes Resources&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Creating Applications with Source-to-Image facility of Red Hat OpenShift&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;:exclamation: &lt;span style=&quot;color:red&quot;&gt; &lt;strong&gt;Spoiler Alert&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;span style=&quot;color:red&quot;&gt; This part may seem very annoying if you’re new to Docker and Kubernetes :sleeping:.&lt;br /&gt;
+Thus, it contains many definitions and concepts about the overall architecture .. just try read them quickly then come back here as you move on through the serie. &lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Before we get our hands dirty we need to have some understanding of the global OpenShift architecture.&lt;/p&gt;
+
+&lt;h2 id=&quot;containerized-applications&quot;&gt;Containerized Applications&lt;/h2&gt;
+
+&lt;p&gt;Software applications are typically deployed to an operating system with a set of services running, such as a database server or an HTTP server, but they can also be deployed to any environment that can provide the same services, such as a virtual machine or a physical host.&lt;br /&gt;
+If another application is sharing the same host OS and the same set of libraries, there might be a risk of breaking it if an update that fixes the first application libraries affects the second application.&lt;br /&gt;
+For a company developing typical software applications, any maintenance on the running environment might require a full set of tests to guarantee that any OS update does not affect the application as well.&lt;br /&gt;
+Depending on the complexity of an application, the regression verification might not be an easy task and might require a major project.&lt;/p&gt;
+
+&lt;p&gt;Alternatively, we can work with containers, which are a kind of isolated partition inside a single operating system.&lt;br /&gt;
+Containers provide many of the same benefits as virtual machines, such as security, storage, and network isolation, while requiring far fewer hardware resources and being quicker to launch and terminate.&lt;/p&gt;
+
+&lt;p class=&quot;image-pull-right&quot;&gt;&lt;img src=&quot;./../assets/img/02-containers_versus_vm.jpg&quot; alt=&quot;jekyll Image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;They also isolate the libraries and the runtime environment (such as CPU and storage) used by an application to minimize the impact of any OS update to the host OS, as described in the previous diagram.&lt;/p&gt;
+
+&lt;p&gt;There are many container providers available, such as Rocket, Drawbridge, and LXC, but the major provider is Docker.&lt;/p&gt;
+
+&lt;h3 id=&quot;advantages-of-docker&quot;&gt;Advantages of Docker&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Low hardware usage&lt;/strong&gt;&lt;br /&gt;
+Docker uses OS internal features to create an isolated environment where resources are managed using OS facilities such as namespaces which minimizes the amount of CPU and memory overhead.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Environment isolation&lt;/strong&gt;&lt;br /&gt;
+Docker allows working in a closed environment where changes made to the host OS or other applications do not affect the container.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Quick deployment&lt;/strong&gt;&lt;br /&gt;
+Docker deploys any container quickly because there is no need for a full OS install or restart.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Reusability&lt;/strong&gt;&lt;br /&gt;
+The same container can be reused by multiple applications without the need to set up a full OS.&lt;/p&gt;
+
+&lt;h2 id=&quot;openshift-and-kubernetes-terminology&quot;&gt;OpenShift and Kubernetes Terminology&lt;/h2&gt;
+
+&lt;p&gt;Red Hat OpenShift Container Platform (OCP) is a set of components and services built on top of RHEL and Docker.&lt;br /&gt;
+OCP adds capabilities such as remote management, increased security, application life-cycle management, and self-service interfaces for developers.&lt;/p&gt;
+
+&lt;p class=&quot;image-pull-right&quot;&gt;&lt;img src=&quot;./../assets/img/03-openshift_architecture.png&quot; alt=&quot;jekyll Image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The basic container infrastructure is shown in the figure above:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The base OS is Red Hat Enterprise Linux (RHEL).&lt;/li&gt;
+  &lt;li&gt;Docker provides the basic container management and the container image file format.&lt;/li&gt;
+  &lt;li&gt;Kubernetes manages a cluster of hosts (physical or virtual) that run containers. It works with resources that describe multicontainer applications and how they interconnect.&lt;/li&gt;
+  &lt;li&gt;OCP-Kubernetes extensions are additional resource types managed by Kubernetes.&lt;/li&gt;
+  &lt;li&gt;Containerized services fulfill many infrastructure functions, such as networking and authorization.&lt;/li&gt;
+  &lt;li&gt;Runtimes and xPaaS are base container images ready for use by developers, each preconfigured with a particular runtime language or database.&lt;/li&gt;
+  &lt;li&gt;DevOps tools and user experience provides Web and CLI management tools for managing user applications and OCP services. The OpenShift Web and CLI tools are built from REST APIs which can be leveraged by external tools such as IDEs and CI platforms.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;kubernetes-resource-types&quot;&gt;Kubernetes Resource Types&lt;/h3&gt;
+
+&lt;p&gt;Kubernetes has five main resource types that can be created and configured using a YAML or a JSON file, or using OpenShift management tools:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Pods&lt;/strong&gt;&lt;br /&gt;
+Represent a collection of containers that share resources, such as IP addresses and persistent storage volumes. It is the basic unit of work for Kubernetes.&lt;br /&gt;
+&lt;strong&gt;Services&lt;/strong&gt;&lt;br /&gt;
+Define a single IP/port combination that provides access to a pool of pods. By default, services connect clients to pods in a round-robin fashion.&lt;br /&gt;
+&lt;strong&gt;Replication Controllers&lt;/strong&gt;&lt;br /&gt;
+A framework for defining pods that are meant to be horizontally scaled. A replication controller includes a pod definition that is to be replicated, and the pods created from it can be scheduled to different nodes.&lt;br /&gt;
+&lt;strong&gt;Persistent Volumes (PV)&lt;/strong&gt;&lt;br /&gt;
+Provision persistent networked storage to pods that can be mounted inside a container to store data.&lt;br /&gt;
+&lt;strong&gt;Persistent Volume Claims (PVC)&lt;/strong&gt;&lt;br /&gt;
+Represent a request for storage by a pod to Kubernetes.&lt;/p&gt;
+
+&lt;h3 id=&quot;openshift-resource-types&quot;&gt;OpenShift Resource Types&lt;/h3&gt;
+
+&lt;p&gt;The main resource types added by OCP to Kubernetes are as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Deployment Configurations (dc)&lt;/strong&gt;&lt;br /&gt;
+Represent a set of pods created from the same container image, managing workflows such as rolling updates.&lt;br /&gt;
+A dc also provides a basic but extensible Continuous Delivery workflow.&lt;br /&gt;
+&lt;strong&gt;Build Configurations (bc)&lt;/strong&gt;&lt;br /&gt;
+Used by the OpenShift Source-to-Image (S2I) feature to build a container image from application source code stored in a Git server.&lt;br /&gt;
+A bc works together with a dc to provide a basic but extensible Continuous Integration/Continuous Delivery workflow.&lt;br /&gt;
+&lt;strong&gt;Routes&lt;/strong&gt;&lt;br /&gt;
+Represent a DNS host name recognized by the OpenShift router as an ingress point for applications and microservices.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+Here we’ve finally finished this chapter :triumph:&lt;br /&gt;
+Let’s put this into practice and &lt;a href=&quot;https://jerbiahmed.github.io/setting-up-openshift-lab&quot;&gt;set up a local lab&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Openshift" /><category term="Kubernetes" /><category term="Docker" /><category term="Orchestration" /><category term="DevOps" /><summary type="html">Openshift fundamentals introduction</summary></entry></feed>
