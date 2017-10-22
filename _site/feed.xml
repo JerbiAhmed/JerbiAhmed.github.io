@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-10-18T16:01:10+02:00</updated><id>http://localhost:4000/</id><title type="html">Jerbi Ahmed</title><subtitle>Personal blog, few notes for dev things I do</subtitle><entry><title type="html">Setting Up A Local OpenShift Lab</title><link href="http://localhost:4000/setting-up-openshift-lab/" rel="alternate" type="text/html" title="Setting Up A Local OpenShift Lab" /><published>2017-10-15T00:00:00+02:00</published><updated>2017-10-15T00:00:00+02:00</updated><id>http://localhost:4000/setting-up-openshift-lab</id><content type="html" xml:base="http://localhost:4000/setting-up-openshift-lab/">&lt;p&gt;This tutorial series aims to provide you with an introduction to container and container orchestration technology using Docker, Kubernetes, and Red Hat OpenShift Container Platform.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-10-22T16:58:32+02:00</updated><id>http://localhost:4000/</id><title type="html">Jerbi Ahmed</title><subtitle>Personal blog, few notes for dev things I do</subtitle><entry><title type="html">Setting Up A Local OpenShift Lab</title><link href="http://localhost:4000/setting-up-openshift-lab/" rel="alternate" type="text/html" title="Setting Up A Local OpenShift Lab" /><published>2017-10-15T00:00:00+02:00</published><updated>2017-10-15T00:00:00+02:00</updated><id>http://localhost:4000/setting-up-openshift-lab</id><content type="html" xml:base="http://localhost:4000/setting-up-openshift-lab/">&lt;p&gt;This tutorial series aims to provide you with an introduction to container and container orchestration technology using Docker, Kubernetes, and Red Hat OpenShift Container Platform.&lt;/p&gt;
 
 &lt;p&gt;This tutorial is Part 1 of my series on Red Hat Openshift. Check out the other articles:&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/introduction&quot;&gt;Fundamentals of Containers, Kubernetes, and Red Hat OpenShift : Tutorial introduction&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/setting-up-openshift-lab&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;Setting Up the Lab Environment&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Overview of the Docker Architecture&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/docker-overview/&quot;&gt;Overview of the Docker Architecture&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Managing the Life Cycle of Containers&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Building Custom Container Images with Dockerfile&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Creating Kubernetes Resources&lt;/a&gt;&lt;/li&gt;
@@ -131,8 +131,8 @@ The server is accessible via web console at:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Our lab is ready,the next article in this tutorial series will explore the &lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Docker architecture&lt;/a&gt;.&lt;br /&gt;
-Ready? &lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Click here&lt;/a&gt;!&lt;/p&gt;</content><author><name></name></author><category term="Openshift" /><category term="Ubuntu" /><category term="Debian" /><category term="Windows" /><category term="Orchestration" /><category term="DevOps" /><summary type="html">Openshift installation instruction</summary></entry><entry><title type="html">Fundamentals of Containers, Kubernetes, and Red Hat OpenShift</title><link href="http://localhost:4000/introduction/" rel="alternate" type="text/html" title="Fundamentals of Containers, Kubernetes, and Red Hat OpenShift" /><published>2017-10-15T00:00:00+02:00</published><updated>2017-10-15T00:00:00+02:00</updated><id>http://localhost:4000/introduction</id><content type="html" xml:base="http://localhost:4000/introduction/">&lt;p&gt;Hello world!&lt;/p&gt;
+&lt;p&gt;Our lab is ready,the next article in this tutorial series will explore the &lt;a href=&quot;https://jerbiahmed.github.io/docker-overview/&quot;&gt;Docker architecture&lt;/a&gt;.&lt;br /&gt;
+Ready? &lt;a href=&quot;https://jerbiahmed.github.io/docker-overview/&quot;&gt;Click here&lt;/a&gt;!&lt;/p&gt;</content><author><name></name></author><category term="Openshift" /><category term="Ubuntu" /><category term="Debian" /><category term="Windows" /><category term="Orchestration" /><category term="DevOps" /><summary type="html">Openshift installation instruction</summary></entry><entry><title type="html">Fundamentals of Containers, Kubernetes, and Red Hat OpenShift</title><link href="http://localhost:4000/introduction/" rel="alternate" type="text/html" title="Fundamentals of Containers, Kubernetes, and Red Hat OpenShift" /><published>2017-10-15T00:00:00+02:00</published><updated>2017-10-15T00:00:00+02:00</updated><id>http://localhost:4000/introduction</id><content type="html" xml:base="http://localhost:4000/introduction/">&lt;p&gt;Hello world!&lt;/p&gt;
 
 &lt;p&gt;This serie will provide you with an introduction to container and container orchestration technology using Docker, Kubernetes, and Red Hat OpenShift Container Platform.&lt;br /&gt;
 You will learn how to containerize applications, test them using Docker, and deploy them on a Kubernetes cluster using Red Hat OpenShift.&lt;br /&gt;
@@ -142,7 +142,7 @@ Additionally, you will build and deploy an application from source code using th
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/introduction&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;Fundamentals of Containers, Kubernetes, and Red Hat OpenShift : Tutorial introduction&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/setting-up-openshift-lab&quot;&gt;Setting Up the Lab Environment&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Overview of the Docker Architecture&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/docker-overview/&quot;&gt;Overview of the Docker Architecture&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Managing the Life Cycle of Containers&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Building Custom Container Images with Dockerfile&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Creating Kubernetes Resources&lt;/a&gt;&lt;/li&gt;
@@ -234,4 +234,234 @@ Represent a DNS host name recognized by the OpenShift router as an ingress point
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;
 Here we’ve finally finished this chapter :triumph:&lt;br /&gt;
-Let’s put this into practice and &lt;a href=&quot;https://jerbiahmed.github.io/setting-up-openshift-lab&quot;&gt;set up a local lab&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Openshift" /><category term="Kubernetes" /><category term="Docker" /><category term="Orchestration" /><category term="DevOps" /><summary type="html">Openshift fundamentals introduction</summary></entry></feed>
+Let’s put this into practice and &lt;a href=&quot;https://jerbiahmed.github.io/setting-up-openshift-lab&quot;&gt;set up a local lab&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Openshift" /><category term="Kubernetes" /><category term="Docker" /><category term="Orchestration" /><category term="DevOps" /><summary type="html">Openshift fundamentals introduction</summary></entry><entry><title type="html">Overview of the Docker Architecture</title><link href="http://localhost:4000/docker-overview/" rel="alternate" type="text/html" title="Overview of the Docker Architecture" /><published>2017-10-15T00:00:00+02:00</published><updated>2017-10-15T00:00:00+02:00</updated><id>http://localhost:4000/docker-overview</id><content type="html" xml:base="http://localhost:4000/docker-overview/">&lt;p&gt;This tutorial series aims to provide you with an introduction to container and container orchestration technology using Docker, Kubernetes, and Red Hat OpenShift Container Platform.&lt;/p&gt;
+
+&lt;p&gt;This tutorial is Part 2 of my series on Red Hat Openshift. Check out the other articles:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/introduction&quot;&gt;Fundamentals of Containers, Kubernetes, and Red Hat OpenShift : Tutorial introduction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/setting-up-openshift-lab&quot;&gt;Setting Up the Lab Environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/docker-overview/&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;Overview of the Docker Architecture&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Managing the Life Cycle of Containers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Building Custom Container Images with Dockerfile&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Creating Kubernetes Resources&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Creating Applications with Source-to-Image facility of Red Hat OpenShift&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;what-is-docker&quot;&gt;What is Docker&lt;/h2&gt;
+&lt;p&gt;I’ll just copy the definition from &lt;a href=&quot;https://opensource.com/resources/what-docker&quot;&gt;opensource.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Docker is a tool that is designed to benefit both developers and system administrators, making it a part of many DevOps (developers + operations) toolchains. For developers, it means that they can focus on writing code without worrying about the system that it will ultimately be running on. It also allows them to get a head start by using one of thousands of programs already designed to run in a Docker container as a part of their application. For operations staff, Docker gives flexibility and potentially reduces the number of systems needed because of its small footprint and lower overhead.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Now let’s fire up our lab and use the command-line to try out basic Docker commands with and begin to understand how it works.&lt;br /&gt;
+There is a beginners guide to Docker that introduces you to some basic commands and container terminology.
+Start the cluster and ssh to the server.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;minishift start
+Starting &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;OpenShift cluster using &lt;span class=&quot;s1&quot;&gt;'virtualbox'&lt;/span&gt; hypervisor...
+Registering machine using subscription-manager
+-- Checking OpenShift client ... OK
+-- Checking Docker client ... OK
+
+ ... ommitted ...
+
+-- Server Information ... 
+   OpenShift server started.
+   The server is accessible via web console at:
+       https://192.168.99.100:8443
+
+   You are logged &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;as:
+       User:     developer
+       Password: developer
+
+   To login as administrator:
+       oc login -u system:admin
+
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;minishift ssh
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;docker@minishift ~]&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;finding-an-image&quot;&gt;Finding an Image&lt;/h2&gt;
+
+&lt;p&gt;Many container images are available for download from the &lt;a href=&quot;https://hub.docker.com/&quot;&gt;DockerHub website&lt;/a&gt;.&lt;br /&gt;
+It is a large repository where developers and administrators can get a number of container images developed by the community and some companies.&lt;br /&gt;
+Anyone can publish images to Docker Hub after they register.&lt;br /&gt;
+By default, Docker downloads image layers from the Docker Hub image registry however, there are many other registries like &lt;a href=&quot;https://quay.io/&quot;&gt;Quay&lt;/a&gt;, Amazon’s &lt;a href=&quot;https://aws.amazon.com/fr/ecr/&quot;&gt;EC2&lt;/a&gt;, Google’s &lt;a href=&quot;https://cloud.google.com/container-registry/&quot;&gt;Container Registry&lt;/a&gt; or even self-hosted &lt;a href=&quot;https://docs.docker.com/registry/deploying/&quot;&gt;private registries&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The Docker Hub search engine is a simple search engine. It looks for a project name from the Docker Hub registry.&lt;br /&gt;
+The search results page lists the string used to pull the image files. For example, for the following screen output, the first column is the name of the container image.&lt;/p&gt;
+
+&lt;p class=&quot;image-pull-right&quot;&gt;&lt;img src=&quot;./../assets/img/04-dockerHub1.png&quot; alt=&quot;jekyll Image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Clicking an image name to display the container image details page. The details page is not guaranteed to display any particular information. Different authors provide different levels of information about the images they create.&lt;/p&gt;
+
+&lt;p class=&quot;image-pull-right&quot;&gt;&lt;img src=&quot;./../assets/img/05-dockerhub2.png&quot; alt=&quot;jekyll Image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The docker command can also be used to search for container images:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker search mysql
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The search uses the Docker Hub registry and also any other registry configured in the local Docker daemon.&lt;/p&gt;
+
+&lt;h2 id=&quot;fetching-an-image&quot;&gt;Fetching an Image&lt;/h2&gt;
+
+&lt;p&gt;To download an image from the Docker Hub container image registry, look for the first column name from the Docker Hub search results page, or the second column from the docker search command and use docker pull command:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo docker pull hello-world
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Many versions of the same image can be provided. Each one receives a different tag name. 
+If no tag name is provided, then docker pull assumes the tag called latest by default.&lt;/p&gt;
+
+&lt;p&gt;To download a specific tag, append the tag name to the image name separated by a colon (:) in the docker pull command:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo docker pull hello-world:latest
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;listing-the-images-available-in-the-local&quot;&gt;Listing the Images Available in the Local&lt;/h2&gt;
+
+&lt;p&gt;To list all images that were already downloaded by the local Docker daemon, use the docker images command:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo docker images
+
+REPOSITORY                         TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+docker.io/hello-world              latest              a5ad9eb2ff48        4 weeks ago         974 B
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;creating-a-container-from-an-image&quot;&gt;Creating a Container from an image&lt;/h2&gt;
+&lt;p&gt;To create and start a process within a new container, use the docker run command. The container is created from the container image name passed as argument.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;guided-exercise-creating-a-mysql-database-instance&quot;&gt;Guided Exercise: Creating a MySQL Database Instance&lt;/h2&gt;
+&lt;p&gt;In this exercise, you will start a MySQL server inside a container, and then create and populate a database.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a MySQL server container instance:&lt;/p&gt;
+
+    &lt;p&gt;1.1. Open a shell inside the Minishift VM. All Docker commands will be run inside the VM:&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;minishift start
+ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;minishift ssh
+ &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;docker@minishift ~] &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;1.2. Start a container from &lt;a href=&quot;https://hub.docker.com/_/mysql/&quot;&gt;the Docker Hub MySQL&lt;/a&gt; image:&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;docker@minishift ~]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run --name mysql-basic -e &lt;span class=&quot;nv&quot;&gt;MYSQL_USER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;user1 -e &lt;span class=&quot;nv&quot;&gt;MYSQL_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pass1 -e &lt;span class=&quot;nv&quot;&gt;MYSQL_DATABASE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;items -e &lt;span class=&quot;nv&quot;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;root -d mysql:5.6
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;Notice that we passed the -d to the docker run command to start a container image as a background process.&lt;br /&gt;
+ Also many container images require parameters to be started, such as the MySQL official image (read Environment Variables in the Docker hub image description).&lt;br /&gt;
+ They should be provided using the -e option from the docker command.&lt;/p&gt;
+
+    &lt;p&gt;This command downloads (pulls) the mysql container image with the &lt;strong&gt;5.6&lt;/strong&gt; tag, and starts a container named &lt;strong&gt;mysql-basic&lt;/strong&gt; based on it. The container runs in the background.&lt;br /&gt;
+ The mysql container image uses the environment variables passed to the docker run command to initialize a database named &lt;strong&gt;items&lt;/strong&gt;, owned by a user named &lt;strong&gt;user1&lt;/strong&gt;, with &lt;strong&gt;pass1&lt;/strong&gt; as the password. The database administrator password is set to &lt;strong&gt;root&lt;/strong&gt;.&lt;/p&gt;
+
+    &lt;p&gt;1.3. Check that the container started without errors.&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo docker ps | grep mysql
+ CONTAINER ID    IMAGE       COMMAND                  CREATED            STATUS         PORTS      NAMES
+ 13568029202d    mysql:5.6   &lt;span class=&quot;s2&quot;&gt;&quot;docker-entrypoint.sh&quot;&lt;/span&gt;   6 seconds ago      Up 4 seconds   3306/tcp   mysql-basic
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Access the container sandbox by running the following command:&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; -it mysql-basic bash
+ root@13568029202d:/# 
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;This will starts a Bash shell, running as root, inside the MySQL container.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add data to the database:&lt;/p&gt;
+
+    &lt;p&gt;Log in to MySQL as the database administrator user (root) using the password we passed to docker run command&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; mysql -proot
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;The mysql command opens the MySQL database interactive prompt. Run the following command to check the items database availability:&lt;/p&gt;
+
+    &lt;div class=&quot;language-m highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;show&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;databases&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;+--------------------+&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Database&lt;/span&gt;           &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;+--------------------+&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;information_schema&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;              &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;              &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;performance_schema&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;+--------------------+&lt;/span&gt;
+ &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rows&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.00&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;Cool our mysql database is up and running , it took just 2 minutes to install an instance, configure and create the database.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Undo the changes made by the lab when you are finished&lt;/p&gt;
+
+    &lt;p&gt;4.1. Stop the running container by running the following command:&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;docker@minishift ~]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker stop mysql-basic
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;4.2. Remove the data from the stopped container by running the following command:&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;docker@minishift ~]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker rm mysql-basic
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;4.3. Remove the container image by running the following command:&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;docker@minishift ~]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker rmi mysql:5.6
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;4.4. Leave the Minishift VM:&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;docker@minishift ~]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;exit
+ logout&lt;/span&gt;
+ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;minishift stop
+ 
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;to-recap&quot;&gt;To recap&lt;/h2&gt;
+&lt;p&gt;The base command for the Docker CLI discussed in this article:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker search   # Search the Docker Hub for images
+docker pull     # Pull an image or a repository from a registry
+docker images   # List images
+docker run      # Run a command in a new container
+docker ps       # List containers
+docker exec     # Run a command in a running container
+docker stop     # Stop one or more running containers
+docker rm       # Remove one or more containers
+docker rmi      # Remove one or more images
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;See also the full &lt;a href=&quot;https://docs.docker.com/engine/reference/commandline/docker/&quot;&gt;Docker command line reference&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that you’re able to run a container from an existing image, let’s learn more about the &lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;life Cycle of containers&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Openshift" /><category term="Kubernetes" /><category term="Docker" /><category term="Orchestration" /><category term="DevOps" /><summary type="html">Docker fundamentals introduction</summary></entry></feed>
