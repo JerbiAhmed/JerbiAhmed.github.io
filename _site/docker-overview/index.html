@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Overview of the Docker Architecture – Jerbi Ahmed</title>
+    <meta name="description" content="Docker fundamentals introduction">
+    <meta name="keywords" content="Openshift, Kubernetes, Docker, Orchestration, DevOps">
+    <link rel="canonical" href="http://localhost:4000/docker-overview/">
+        <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Overview of the Docker Architecture">
+    <meta name="twitter:description" content="Docker fundamentals introduction">
+    <meta name="twitter:site" content="@jerbi_ahmed_">
+    <meta name="twitter:creator" content="@jerbi_ahmed_">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="http://localhost:4000/assets/img/profile.png">
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Overview of the Docker Architecture">
+    <meta property="og:description" content="Docker fundamentals introduction">
+    <meta property="og:url" content="http://localhost:4000/docker-overview/">
+    <meta property="og:site_name" content="Jerbi Ahmed">
+    <meta property="og:image" content="http://localhost:4000/assets/img/profile.png">
+
+    
+    
+    <!-- Handheld -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://localhost:4000/assets/img/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/assets/img/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/assets/img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/assets/img/favicon/apple-touch-icon-144x144.png">
+    <link rel="icon" type="image/png" href="http://localhost:4000/assets/img/favicon/favicon.png">
+    <link rel="shortcut icon" href="http://localhost:4000/assets/img/favicon/favicon.ico">
+    <!-- Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Jerbi Ahmed" href="http://localhost:4000/feed.xml">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/main.css">
+</head>
+
+  <body>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        i = 0;
+        $('.menuAc').css({
+          'color': 'rgba(52, 152, 219, 1)'
+        });
+        $('.menuAc').click(function(){
+          $(this).next('.menuMobil').animate({width:'toggle'},350);
+          if (i%2==0) {
+            $('.footer').css({
+              'filter'         : 'blur(5px)'
+            });
+            $('.yazilar').css({
+              'filter'         : 'blur(5px)'
+            });
+            $('.ust').css({
+              'filter'         : 'blur(5px)'
+            });
+            $('ul.menu').css({
+              'animation-duration': '0.1s'
+            });
+            i++;
+          }
+          else {
+            $('.footer').css({
+              'filter'         : 'blur(0px)'
+            });
+            $('.yazilar').css({
+              'filter'         : 'blur(0px)'
+            });
+            $('.ust').css({
+              'filter'         : 'blur(0px)'
+            });
+            i++;
+          }
+
+        });
+      });
+    </script>
+    <div class="menuAc">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <div class="menuMobil">
+          <nav class="nav-home">
+      <ul class="menu">
+            
+				    
+				    <li><a class="link" href="http://localhost:4000/">Home</a></li>
+				
+				    
+				    <li><a class="link" href="http://localhost:4000/blog/">Blog</a></li>
+				
+				    
+				    <li><a class="link" href="http://localhost:4000/projects/">Projects</a></li>
+				
+				    
+				    <li><a class="link" href="http://localhost:4000/about/">About</a></li>
+				
+        </ul>
+    </nav>
+
+    </div>
+    <div class="ust">
+      <div class="ortalaAna">
+        <div class="baslikAna">
+          Jerbi Ahmed
+        </div>
+
+        <div class="pc">
+              <nav class="nav">
+        <ul class="menuAna">
+            
+				    
+				    <li class="item"><a class="link" href="http://localhost:4000/">Home</a></li>
+				
+				    
+				    <li class="item"><a class="link" href="http://localhost:4000/blog/">Blog</a></li>
+				
+				    
+				    <li class="item"><a class="link" href="http://localhost:4000/projects/">Projects</a></li>
+				
+				    
+				    <li class="item"><a class="link" href="http://localhost:4000/about/">About</a></li>
+				
+        </ul>
+    </nav>
+
+        </div>
+      </div>
+    </div>
+    <div class="ortalaAna">
+      <div class="yazilar">
+        <div class="yazi">
+          <div class="ustr">
+            <h2>Overview of the Docker Architecture</h2>
+            <div class="yazibilgisi">
+              15 Oct 2017.
+            </div>
+          </div>
+          <hr>
+          <div class="content">
+            
+<p>This tutorial series aims to provide you with an introduction to container and container orchestration technology using Docker, Kubernetes, and Red Hat OpenShift Container Platform.</p>
+
+<p>This tutorial is Part 2 of my series on Red Hat Openshift. Check out the other articles:</p>
+
+<ol>
+  <li><a href="https://jerbiahmed.github.io/introduction">Fundamentals of Containers, Kubernetes, and Red Hat OpenShift : Tutorial introduction</a></li>
+  <li><a href="https://jerbiahmed.github.io/setting-up-openshift-lab">Setting Up the Lab Environment</a></li>
+  <li><a href="https://jerbiahmed.github.io/docker-overview/"><span style="color:red">Overview of the Docker Architecture</span></a></li>
+  <li><a href="https://jerbiahmed.github.io/">Managing the Life Cycle of Containers</a></li>
+  <li><a href="https://jerbiahmed.github.io/">Building Custom Container Images with Dockerfile</a></li>
+  <li><a href="https://jerbiahmed.github.io/">Creating Kubernetes Resources</a></li>
+  <li><a href="https://jerbiahmed.github.io/">Creating Applications with Source-to-Image facility of Red Hat OpenShift</a></li>
+</ol>
+
+<h2 id="what-is-docker">What is Docker</h2>
+<p>I’ll just copy the definition from <a href="https://opensource.com/resources/what-docker">opensource.com</a></p>
+
+<blockquote>
+  <p>Docker is a tool that is designed to benefit both developers and system administrators, making it a part of many DevOps (developers + operations) toolchains. For developers, it means that they can focus on writing code without worrying about the system that it will ultimately be running on. It also allows them to get a head start by using one of thousands of programs already designed to run in a Docker container as a part of their application. For operations staff, Docker gives flexibility and potentially reduces the number of systems needed because of its small footprint and lower overhead.</p>
+</blockquote>
+
+<p>Now let’s fire up our lab and use the command-line to try out basic Docker commands with and begin to understand how it works.<br>
+There is a beginners guide to Docker that introduces you to some basic commands and container terminology.
+Start the cluster and ssh to the server.</p>
+
+<div class="language-shell highlighter-rouge">
+<pre class="highlight"><code><span class="gp">$ </span>minishift start
+Starting <span class="nb">local </span>OpenShift cluster using <span class="s1">'virtualbox'</span> hypervisor...
+Registering machine using subscription-manager
+-- Checking OpenShift client ... OK
+-- Checking Docker client ... OK
+
+ ... ommitted ...
+
+-- Server Information ... 
+   OpenShift server started.
+   The server is accessible via web console at:
+       https://192.168.99.100:8443
+
+   You are logged <span class="k">in </span>as:
+       User:     developer
+       Password: developer
+
+   To login as administrator:
+       oc login -u system:admin
+
+<span class="gp">$ </span>minishift ssh
+<span class="o">[</span>docker@minishift ~]<span class="err">$</span>
+</code></pre>
+</div>
+<h2 id="finding-an-image">Finding an Image</h2>
+
+<p>Many container images are available for download from the <a href="https://hub.docker.com/">DockerHub website</a>.<br>
+It is a large repository where developers and administrators can get a number of container images developed by the community and some companies.<br>
+Anyone can publish images to Docker Hub after they register.<br>
+By default, Docker downloads image layers from the Docker Hub image registry however, there are many other registries like <a href="https://quay.io/">Quay</a>, Amazon’s <a href="https://aws.amazon.com/fr/ecr/">EC2</a>, Google’s <a href="https://cloud.google.com/container-registry/">Container Registry</a> or even self-hosted <a href="https://docs.docker.com/registry/deploying/">private registries</a>.</p>
+
+<p>The Docker Hub search engine is a simple search engine. It looks for a project name from the Docker Hub registry.<br>
+The search results page lists the string used to pull the image files. For example, for the following screen output, the first column is the name of the container image.</p>
+
+<p class="image-pull-right"><img src="./../assets/img/04-dockerHub1.png" alt="jekyll Image"></p>
+
+<p>Clicking an image name to display the container image details page. The details page is not guaranteed to display any particular information. Different authors provide different levels of information about the images they create.</p>
+
+<p class="image-pull-right"><img src="./../assets/img/05-dockerhub2.png" alt="jekyll Image"></p>
+
+<p>The docker command can also be used to search for container images:</p>
+
+<div class="language-shell highlighter-rouge">
+<pre class="highlight"><code>docker search mysql
+</code></pre>
+</div>
+
+<p>The search uses the Docker Hub registry and also any other registry configured in the local Docker daemon.</p>
+
+<h2 id="fetching-an-image">Fetching an Image</h2>
+
+<p>To download an image from the Docker Hub container image registry, look for the first column name from the Docker Hub search results page, or the second column from the docker search command and use docker pull command:</p>
+
+<div class="language-shell highlighter-rouge">
+<pre class="highlight"><code>sudo docker pull hello-world
+</code></pre>
+</div>
+<p>Many versions of the same image can be provided. Each one receives a different tag name. 
+If no tag name is provided, then docker pull assumes the tag called latest by default.</p>
+
+<p>To download a specific tag, append the tag name to the image name separated by a colon (:) in the docker pull command:</p>
+
+<div class="language-shell highlighter-rouge">
+<pre class="highlight"><code>sudo docker pull hello-world:latest
+</code></pre>
+</div>
+
+<h2 id="listing-the-images-available-in-the-local">Listing the Images Available in the Local</h2>
+
+<p>To list all images that were already downloaded by the local Docker daemon, use the docker images command:</p>
+
+<div class="language-shell highlighter-rouge">
+<pre class="highlight"><code><span class="gp">$ </span>sudo docker images
+
+REPOSITORY                         TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+docker.io/hello-world              latest              a5ad9eb2ff48        4 weeks ago         974 B
+</code></pre>
+</div>
+<h2 id="creating-a-container-from-an-image">Creating a Container from an image</h2>
+<p>To create and start a process within a new container, use the docker run command. The container is created from the container image name passed as argument.</p>
+
+<div class="language-shell highlighter-rouge">
+<pre class="highlight"><code><span class="gp">$ </span>sudo docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+</code></pre>
+</div>
+
+<h2 id="guided-exercise-creating-a-mysql-database-instance">Guided Exercise: Creating a MySQL Database Instance</h2>
+<p>In this exercise, you will start a MySQL server inside a container, and then create and populate a database.</p>
+
+<ol>
+  <li>
+    <p>Create a MySQL server container instance:</p>
+
+    <p>1.1. Open a shell inside the Minishift VM. All Docker commands will be run inside the VM:</p>
+
+    <div class="language-shell highlighter-rouge">
+<pre class="highlight"><code> <span class="nv">$ </span>minishift start
+ <span class="nv">$ </span>minishift ssh
+ <span class="o">[</span>docker@minishift ~] <span class="err">$</span>
+</code></pre>
+    </div>
+
+    <p>1.2. Start a container from <a href="https://hub.docker.com/_/mysql/">the Docker Hub MySQL</a> image:</p>
+
+    <div class="language-shell highlighter-rouge">
+<pre class="highlight"><code> <span class="o">[</span>docker@minishift ~]<span class="nv">$ </span>docker run --name mysql-basic -e <span class="nv">MYSQL_USER</span><span class="o">=</span>user1 -e <span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>pass1 -e <span class="nv">MYSQL_DATABASE</span><span class="o">=</span>items -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>root -d mysql:5.6
+</code></pre>
+    </div>
+
+    <p>Notice that we passed the -d to the docker run command to start a container image as a background process.<br>
+ Also many container images require parameters to be started, such as the MySQL official image (read Environment Variables in the Docker hub image description).<br>
+ They should be provided using the -e option from the docker command.</p>
+
+    <p>This command downloads (pulls) the mysql container image with the <strong>5.6</strong> tag, and starts a container named <strong>mysql-basic</strong> based on it. The container runs in the background.<br>
+ The mysql container image uses the environment variables passed to the docker run command to initialize a database named <strong>items</strong>, owned by a user named <strong>user1</strong>, with <strong>pass1</strong> as the password. The database administrator password is set to <strong>root</strong>.</p>
+
+    <p>1.3. Check that the container started without errors.</p>
+
+    <div class="language-shell highlighter-rouge">
+<pre class="highlight"><code> <span class="nv">$ </span>sudo docker ps | grep mysql
+ CONTAINER ID    IMAGE       COMMAND                  CREATED            STATUS         PORTS      NAMES
+ 13568029202d    mysql:5.6   <span class="s2">"docker-entrypoint.sh"</span>   6 seconds ago      Up 4 seconds   3306/tcp   mysql-basic
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Access the container sandbox by running the following command:</p>
+
+    <div class="language-shell highlighter-rouge">
+<pre class="highlight"><code> <span class="nv">$ </span>docker <span class="nb">exec</span> -it mysql-basic bash
+ root@13568029202d:/# 
+</code></pre>
+    </div>
+
+    <p>This will starts a Bash shell, running as root, inside the MySQL container.</p>
+  </li>
+  <li>
+    <p>Add data to the database:</p>
+
+    <p>Log in to MySQL as the database administrator user (root) using the password we passed to docker run command</p>
+
+    <div class="language-shell highlighter-rouge">
+<pre class="highlight"><code> mysql -proot
+</code></pre>
+    </div>
+
+    <p>The mysql command opens the MySQL database interactive prompt. Run the following command to check the items database availability:</p>
+
+    <div class="language-m highlighter-rouge">
+<pre class="highlight"><code> <span class="n">mysql</span><span class="o">&gt;</span> <span class="n">show</span> <span class="n">databases</span><span class="p">;</span>
+ <span class="o">+--------------------+</span>
+ <span class="o">|</span> <span class="n">Database</span>           <span class="o">|</span>
+ <span class="o">+--------------------+</span>
+ <span class="o">|</span> <span class="n">information_schema</span> <span class="o">|</span>
+ <span class="o">|</span> <span class="n">items</span>              <span class="o">|</span>
+ <span class="o">|</span> <span class="n">mysql</span>              <span class="o">|</span>
+ <span class="o">|</span> <span class="n">performance_schema</span> <span class="o">|</span>
+ <span class="o">+--------------------+</span>
+ <span class="mi">4</span> <span class="n">rows</span> <span class="n">in</span> <span class="nb">set</span> <span class="p">(</span><span class="mf">0.00</span> <span class="nb">sec</span><span class="p">)</span>
+</code></pre>
+    </div>
+
+    <p>Cool our mysql database is up and running , it took just 2 minutes to install an instance, configure and create the database.</p>
+  </li>
+  <li>
+    <p>Undo the changes made by the lab when you are finished</p>
+
+    <p>4.1. Stop the running container by running the following command:</p>
+
+    <div class="language-shell highlighter-rouge">
+<pre class="highlight"><code> <span class="o">[</span>docker@minishift ~]<span class="nv">$ </span>docker stop mysql-basic
+</code></pre>
+    </div>
+
+    <p>4.2. Remove the data from the stopped container by running the following command:</p>
+
+    <div class="language-shell highlighter-rouge">
+<pre class="highlight"><code> <span class="o">[</span>docker@minishift ~]<span class="nv">$ </span>docker rm mysql-basic
+</code></pre>
+    </div>
+
+    <p>4.3. Remove the container image by running the following command:</p>
+
+    <div class="language-shell highlighter-rouge">
+<pre class="highlight"><code> <span class="o">[</span>docker@minishift ~]<span class="nv">$ </span>docker rmi mysql:5.6
+</code></pre>
+    </div>
+
+    <p>4.4. Leave the Minishift VM:</p>
+
+    <div class="language-shell highlighter-rouge">
+<pre class="highlight"><code> <span class="o">[</span>docker@minishift ~]<span class="nv">$ </span><span class="nb">exit
+ logout</span>
+ <span class="nv">$ </span>minishift stop
+ 
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h2 id="to-recap">To recap</h2>
+<p>The base command for the Docker CLI discussed in this article:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>docker search   # Search the Docker Hub for images
+docker pull     # Pull an image or a repository from a registry
+docker images   # List images
+docker run      # Run a command in a new container
+docker ps       # List containers
+docker exec     # Run a command in a running container
+docker stop     # Stop one or more running containers
+docker rm       # Remove one or more containers
+docker rmi      # Remove one or more images
+</code></pre>
+</div>
+
+<p>See also the full <a href="https://docs.docker.com/engine/reference/commandline/docker/">Docker command line reference</a></p>
+
+<p>Now that you’re able to run a container from an existing image, let’s learn more about the <a href="https://jerbiahmed.github.io/">life Cycle of containers</a>.</p>
+
+
+          </div>
+        </div>
+        <script src="http://localhost:4000/assets/js/jquery-1.12.2.min.js"></script>
+<script src="http://localhost:4000/assets/js/jquery.goup.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $.goup({
+        trigger: 500,
+        bottomOffset: 10,
+        locationOffset: 20,
+        containerRadius: 0,
+        containerColor: '#fff',
+        arrowColor: '#000',
+        goupSpeed: 'normal'
+    });
+});
+</script>
+
+
+        
+  <div id="disqus_thread" class="yazi">  </div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://ahmedjerbi.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+  <script id="dsq-count-scr" src="//ahmedjerbi.disqus.com/count.js" async></script>
+
+
+      </div>
+    </div>
+        <div class="footer">
+      <div class="ortalaAna">
+        <div class="copy">
+          Jerbi Ahmed © 2017
+        </div>
+        <div class="sosyal">
+                        <div class="social-links">
+                  <a href="mailto:jerbiahmed@outlook.com" class="author-social" target="_blank"><i class="fa fa-2x fa-envelope-square"></i></a>
+                  <a href="http://twitter.com/jerbi_ahmed_" class="author-social" target="_blank"><i class="fa fa-2x fa-twitter-square"></i></a>
+                  <a href="http://facebook.com/jerbia7med" class="author-social" target="_blank"><i class="fa fa-2x fa-facebook-square"></i></a>
+                  
+                  <a href="http://linkedin.com/in/jerbiahmed" class="author-social" target="_blank"><i class="fa fa-2x fa-linkedin-square"></i></a>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
