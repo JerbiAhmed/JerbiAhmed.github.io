@@ -5,13 +5,13 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Setting Up A Local OpenShift Lab – Jerbi Ahmed</title>
-    <meta name="description" content="Openshift installation instruction">
-    <meta name="keywords" content="Openshift, Ubuntu, Debian, Windows, Orchestration, DevOps">
-    <link rel="canonical" href="http://localhost:4000/setting-up-openshift-lab/">
+    <title>Managing the Life Cycle of Containers – Jerbi Ahmed</title>
+    <meta name="description" content="Docker commands life cycle">
+    <meta name="keywords" content="Openshift, Kubernetes, Docker, Orchestration, DevOps">
+    <link rel="canonical" href="http://localhost:4000/docker-life-cycle/">
         <!-- Twitter Cards -->
-    <meta name="twitter:title" content="Setting Up A Local OpenShift Lab">
-    <meta name="twitter:description" content="Openshift installation instruction">
+    <meta name="twitter:title" content="Managing the Life Cycle of Containers">
+    <meta name="twitter:description" content="Docker commands life cycle">
     <meta name="twitter:site" content="@jerbi_ahmed_">
     <meta name="twitter:creator" content="@jerbi_ahmed_">
     <meta name="twitter:card" content="summary">
@@ -19,9 +19,9 @@
     <!-- Open Graph -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Setting Up A Local OpenShift Lab">
-    <meta property="og:description" content="Openshift installation instruction">
-    <meta property="og:url" content="http://localhost:4000/setting-up-openshift-lab/">
+    <meta property="og:title" content="Managing the Life Cycle of Containers">
+    <meta property="og:description" content="Docker commands life cycle">
+    <meta property="og:url" content="http://localhost:4000/docker-life-cycle/">
     <meta property="og:site_name" content="Jerbi Ahmed">
     <meta property="og:image" content="http://localhost:4000/assets/img/profile.png">
 
@@ -140,7 +140,7 @@
       <div class="yazilar">
         <div class="yazi">
           <div class="ustr">
-            <h2>Setting Up A Local OpenShift Lab</h2>
+            <h2>Managing the Life Cycle of Containers</h2>
             <div class="yazibilgisi">
               15 Oct 2017.
             </div>
@@ -150,148 +150,151 @@
             
 <p>This tutorial series aims to provide you with an introduction to container and container orchestration technology using Docker, Kubernetes, and Red Hat OpenShift Container Platform.</p>
 
-<p>This tutorial is Part 1 of my series on Red Hat Openshift. Check out the other articles:</p>
+<p>This tutorial is Part 3 of my series on Red Hat Openshift. Check out the other articles:</p>
+
 <ol>
   <li><a href="https://jerbiahmed.github.io/introduction">Fundamentals of Containers, Kubernetes, and Red Hat OpenShift : Tutorial introduction</a></li>
-  <li><a href="https://jerbiahmed.github.io/setting-up-openshift-lab"><span style="color:red">Setting Up the Lab Environment</span></a></li>
+  <li><a href="https://jerbiahmed.github.io/setting-up-openshift-lab">Setting Up the Lab Environment</a></li>
   <li><a href="https://jerbiahmed.github.io/docker-overview/">Overview of the Docker Architecture</a></li>
-  <li><a href="https://jerbiahmed.github.io/docker-life-cycle">Managing the Life Cycle of Containers</a></li>
+  <li><a href="https://jerbiahmed.github.io/docker-life-cycle"><span style="color:red">Managing the Life Cycle of Containers</span></a></li>
   <li><a href="https://jerbiahmed.github.io/">Building Custom Container Images with Dockerfile</a></li>
   <li><a href="https://jerbiahmed.github.io/">Creating Kubernetes Resources</a></li>
   <li><a href="https://jerbiahmed.github.io/">Creating Applications with Source-to-Image facility of Red Hat OpenShift</a></li>
 </ol>
 
-<h1 id="setting-up-the-lab-environment">Setting Up the Lab Environment</h1>
+<p>Let’s curry on with this section, we will se how to manage the life cycle of a container from creation to deletion.</p>
 
-<p>This serie includes a number of guided exercises, which give you an opportunity to practice the skills you are learning. To complete these exercises, you need to configure a practice environment that you completely control.</p>
+<h2 id="docker-client-verbs">Docker Client Verbs</h2>
+<p>The Docker client, implemented by the docker command, provides a set of verbs to create and manage containers. The following figure shows a summary of the most commonly used verbs that change container state.</p>
 
-<p>The installation of the lab environment consists of the following tasks:</p>
-<ol>
-  <li>Install Oracle VirtualBox to serve as a virtualization manager for Red Hat CDK .</li>
-  <li>Install Red Hat CDK 3.</li>
-  <li>Install OpenShift Origin CLI</li>
-  <li>Starting an OpenShift cluster.</li>
-</ol>
+<p class="image-pull-right"><img src="./../assets/img/06-docker_actions.png" alt="jekyll Image"></p>
 
-<h2 id="install-oracle-virtualbox">Install Oracle VirtualBox</h2>
+<h2 id="managing-containers">Managing Containers</h2>
 
-<div class="language-shell highlighter-rouge">
-<pre class="highlight"><code>wget -q -O- http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc | sudo apt-key add -
-sh -c <span class="s1">'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list'</span>
-sudo apt update
-sudo apt-get install virtualbox-5.1
-</code></pre>
-</div>
-<h2 id="install-red-hat-cdk-3">Install RED HAT CDK 3</h2>
+<p>Docker provides the following commands to manage containers:</p>
 
-<p>Download the Red Hat Container Development Kit 3 from <a href="https://developers.redhat.com/products/cdk/download">here</a>, you may need to login or to create a Red Hat developer account if you don’t have one already.<br>
-Download the appropriate package for the operating system then rename the downloaded file to <strong><code class="highlighter-rouge">minishift​</code></strong> and copy the binary file to <strong><code class="highlighter-rouge">/usr/local/bin</code>​</strong> or another directory that is accessible in your command-shell path.</p>
-
-<h3 id="on-linux">On Linux</h3>
+<ul>
+  <li>
+<strong>docker ps</strong>: This command is responsible for listing running containers</li>
+</ul>
 
 <div class="language-shell highlighter-rouge">
-<pre class="highlight"><code>sudo mv cdk-3.1.1-1-minishift-linux-amd64 /usr/local/bin/minishift
-sudo chmod +x /usr/local/bin/minishift
+<pre class="highlight"><code><span class="gp">$ </span>docker ps -a
+CONTAINER ID        IMAGE               COMMAND                 CREATED             STATUS                       PORTS               NAMES
+4829d82fbbff        do180/httpd         <span class="s2">"httpd -D FOREGROUND"</span>   15 hours ago        Exited <span class="o">(</span>0<span class="o">)</span> 3 seconds ago                         my-httpd-container
 </code></pre>
 </div>
 
-<h3 id="on-windows">On Windows</h3>
-
-<p>Rename your file to <strong>minishift.exe</strong> and add its directory to path env variable.</p>
-
-<h2 id="install-openshift-origin-cli">Install OpenShift Origin CLI</h2>
-
-<p>Get the last release of OpenShift Origin client from its <a href="https://github.com/openshift/origin/releases">GitHub repository</a>.</p>
-
-<p class="image-pull-right"><img src="./../assets/img/01-OC_origin_CLI.png" alt="jekyll Image"></p>
-
-<p>Unpack the package for your OS , rename the oc binary and add it to system path.</p>
-
-<h3 id="on-linux-1">On Linux</h3>
+<ul>
+  <li>
+<strong>docker inspect</strong>: This command is responsible for listing metadata about a running or stopped container. The command produces a JSON output</li>
+</ul>
 
 <div class="language-shell highlighter-rouge">
-<pre class="highlight"><code>tar -xzf openshift-origin-client-tools-v3.6.0-c4dd4cf-linux-64bit.tar.gz -C .
-<span class="nb">cd </span>openshift-origin-client-tools-v3.6.0-c4dd4cf-linux-64bit/
-sudo mv oc /usr/local/bin/oc
-sudo chmod +x /usr/local/bin/oc
+<pre class="highlight"><code><span class="gp">$ </span>docker inspect my-httpd-container
+
+<span class="o">{</span>
+    <span class="s2">"Id"</span>: <span class="s2">"980e45b5376a4e966775fb49cbef47ee7bbd461be8bfd1a75c2cc5371676c8be"</span>,
+...
+    <span class="s2">"NetworkSettings"</span>: <span class="o">{</span>
+        <span class="s2">"Bridge"</span>: <span class="s2">""</span>,
+        <span class="s2">"EndpointID"</span>: <span class="s2">"483fc91363e5d877ea8f9696854a1f14710a085c6719afc858792154905d801a"</span>,
+        <span class="s2">"Gateway"</span>: <span class="s2">"172.17.42.1"</span>,
+        <span class="s2">"GlobalIPv6Address"</span>: <span class="s2">""</span>,
+        <span class="s2">"GlobalIPv6PrefixLen"</span>: 0,
+        <span class="s2">"HairpinMode"</span>: <span class="nb">false</span>,
+        <span class="s2">"IPAddress"</span>: <span class="s2">"172.17.0.9"</span>,
+...
+<span class="o">}</span>
 </code></pre>
 </div>
 
-<h3 id="on-windows-1">On Windows</h3>
+<ul>
+  <li>
+<strong>docker stop</strong>: This command is responsible for stopping a running container gracefully</li>
+  <li>
+<strong>docker kill</strong>: This command is responsible for stopping a running container forcefully<br>
+It is possible to specify the signal with the -s option
+    <div class="language-shell highlighter-rouge">
+<pre class="highlight"><code>docker <span class="nb">kill</span> -s SIGKILL my-httpd-container
+</code></pre>
+    </div>
+  </li>
+  <li>
+<strong>docker restart</strong>: This command is responsible for restarting a stopped container</li>
+  <li>
+<strong>docker rm</strong>: This command is responsible for deleting a container, discarding its state and filesystem<br>
+It is possible to delete all containers at the same time. The docker ps command has the -q option that returns only the ID of the containers.
+    <div class="language-shell highlighter-rouge">
+<pre class="highlight"><code><span class="gp">$ </span>docker stop <span class="k">$(</span>docker ps -q<span class="k">)</span>
+<span class="gp">$ </span>docker rm <span class="k">$(</span>docker ps -aq<span class="k">)</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
 
-<p>Unpack, rename your file to <strong>oc.exe</strong> then place it in the same directory as minishift.exe.</p>
-
-<h2 id="configure-and-run-openshift">Configure and run Openshift</h2>
-
-<p>First we need to change two persistent configuration options as we will use the virtualbox driver and will allocate 2 GB of RAM which should be enough for our lab.</p>
-
-<h3 id="on-linux-2">On Linux</h3>
-
+<h2 id="running-commands-in-a-container">Running Commands in a Container</h2>
+<p>When a container is created, a default command is executed according to what is specified by the container image. However, it may be necessary to execute other commands to manage the running container.<br>
+The <strong>docker exec</strong> command starts an additional process inside a running container:</p>
 <div class="language-shell highlighter-rouge">
-<pre class="highlight"><code>minishift setup-cdk
-minishift config <span class="nb">set </span>vm-driver virtualbox
-minishift config <span class="nb">set </span>memory 2048
+<pre class="highlight"><code><span class="gp">$ </span>sudo docker <span class="nb">exec</span> -it my-httpd-container /bin/bash
+<span class="gp">$ </span>root@665b4a1e17b6:/#
 </code></pre>
 </div>
+<p>Now you have started a bash shell inside your container you can run any shell command on it.</p>
 
-<h3 id="on-windows-2">On Windows</h3>
-
-<p>Open a powershell and browse to minishift.exe path then run it.</p>
-
-<div class="language-shell highlighter-rouge">
-<pre class="highlight"><code><span class="nb">cd </span>c:/minishift
-./minishift.exe setup-cdk
-./minishift.exe config <span class="nb">set </span>vm-driver virtualbox
-./minishift.exe config <span class="nb">set </span>memory 2048
+<h2 id="managing-container-images">Managing Container Images</h2>
+<ul>
+  <li>
+<strong>docker save</strong>: generates a file containing image metadata and preserves original image layers, so the original image can be later re-created exactly as it was.
+    <div class="language-shell highlighter-rouge">
+<pre class="highlight"><code>docker save <span class="o">[</span>-o FILE_NAME] IMAGE_NAME[:TAG]
 </code></pre>
-</div>
-<p>The minishift config​ command may issue a warning message, “No Minishift instance exists…”.
-This message can safely be ignored.<br>
-Execute the following command to start an OpenShift cluster when prompted enter your Red Hat developer account credentials.</p>
-
-<h3 id="on-linux-3">On Linux</h3>
-
-<div class="language-shell highlighter-rouge">
-<pre class="highlight"><code>minishift start
+    </div>
+  </li>
+  <li>
+<strong>docker load</strong>: restore the container image from a file
+    <div class="language-shell highlighter-rouge">
+<pre class="highlight"><code>docker load <span class="o">[</span>-i FILE_NAME]
 </code></pre>
-</div>
-<h3 id="on-windows-3">On Windows</h3>
-
-<div class="language-shell highlighter-rouge">
-<pre class="highlight"><code>./minishift.exe start
-
-Starting <span class="nb">local </span>OpenShift cluster using <span class="s1">'virtualbox'</span> hypervisor...
-Registering machine using subscription-manager
-Red Hat Developers or Red Hat Subscription Management <span class="o">(</span>RHSM<span class="o">)</span> username: jerbia7med
-Red Hat Developers or Red Hat Subscription Management <span class="o">(</span>RHSM<span class="o">)</span> password: <span class="o">[</span>HIDDEN]
-Registration successful <span class="o">[</span>53.4s]
-Starting OpenShift using registry.access.redhat.com/openshift3/ose:v3.6.173.0.5 ...
-OpenShift server started.
-
-The server is accessible via web console at:
-    https://192.168.99.100:8443
+    </div>
+  </li>
+  <li>
+<strong>docker rmi</strong>: delete an image from the cache
+    <div class="language-shell highlighter-rouge">
+<pre class="highlight"><code>docker <span class="o">[</span>OPTIONS] IMAGE
 </code></pre>
-</div>
-
-<p>Your local OpenShift server is now up and running,you can check its web console by browsing to https://192.168.99.100:8443 .</p>
-
-<p>Now that we verified our installation is OK let’s stop the cluster and reduce some memory usage, I know your computer is overheating <img class="emoji" title=":fire:" alt=":fire:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f525.png" height="20" width="20"><img class="emoji" title=":fire:" alt=":fire:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f525.png" height="20" width="20"><img class="emoji" title=":fire:" alt=":fire:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f525.png" height="20" width="20"></p>
-
-<h3 id="on-linux-4">On Linux</h3>
-
-<div class="language-shell highlighter-rouge">
-<pre class="highlight"><code>minishift stop
+    </div>
+    <p>To delete all images that are not used by any container, use the following command:</p>
+    <div class="language-shell highlighter-rouge">
+<pre class="highlight"><code> docker rmi <span class="k">$(</span>docker images -q<span class="k">)</span>
 </code></pre>
-</div>
-<h3 id="on-windows-4">On Windows</h3>
-
-<div class="language-shell highlighter-rouge">
-<pre class="highlight"><code>./minishift.exe stop
+    </div>
+  </li>
+  <li>
+<strong>docker diff</strong>: used to identify which files were changed, created, or deleted since the container was started
+    <div class="language-shell highlighter-rouge">
+<pre class="highlight"><code><span class="gp">$ </span>docker diff mysql-basic
+C /run
+C /run/mysqld
+A /run/mysqld/mysqld.pid
+A /run/mysqld/mysqld.sock
+A /run/mysqld/mysqld.sock.lock
+A /run/secrets
 </code></pre>
-</div>
+    </div>
 
-<p>Our lab is ready,the next article in this tutorial series will explore the <a href="https://jerbiahmed.github.io/docker-overview/">Docker architecture</a>.<br>
-Ready? <a href="https://jerbiahmed.github.io/docker-overview/">Click here</a>!</p>
+    <p>Any added file is marked with an A, and any changed file is marked with a C.</p>
+
+    <p>To commit the changes to another image, run <strong>docker commit</strong>:</p>
+    <div class="language-shell highlighter-rouge">
+<pre class="highlight"><code>  <span class="nv">$ </span>docker commit mysql-basic mysql-custom
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<p>Playing with images and containers is cool but <a href="https://jerbiahmed.github.io/">building custom container images with Dockerfiles</a> is even more fun!</p>
 
 
           </div>

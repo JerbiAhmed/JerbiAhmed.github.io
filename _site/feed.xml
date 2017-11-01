@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-10-22T16:58:32+02:00</updated><id>http://localhost:4000/</id><title type="html">Jerbi Ahmed</title><subtitle>Personal blog, few notes for dev things I do</subtitle><entry><title type="html">Setting Up A Local OpenShift Lab</title><link href="http://localhost:4000/setting-up-openshift-lab/" rel="alternate" type="text/html" title="Setting Up A Local OpenShift Lab" /><published>2017-10-15T00:00:00+02:00</published><updated>2017-10-15T00:00:00+02:00</updated><id>http://localhost:4000/setting-up-openshift-lab</id><content type="html" xml:base="http://localhost:4000/setting-up-openshift-lab/">&lt;p&gt;This tutorial series aims to provide you with an introduction to container and container orchestration technology using Docker, Kubernetes, and Red Hat OpenShift Container Platform.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-11-01T20:14:10+01:00</updated><id>http://localhost:4000/</id><title type="html">Jerbi Ahmed</title><subtitle>{&quot;Description&quot;: &quot;My Personal Blog&quot;, &quot;version&quot;: &quot;1.0.0&quot;}</subtitle><entry><title type="html">Setting Up A Local OpenShift Lab</title><link href="http://localhost:4000/setting-up-openshift-lab/" rel="alternate" type="text/html" title="Setting Up A Local OpenShift Lab" /><published>2017-10-15T00:00:00+02:00</published><updated>2017-10-15T00:00:00+02:00</updated><id>http://localhost:4000/setting-up-openshift-lab</id><content type="html" xml:base="http://localhost:4000/setting-up-openshift-lab/">&lt;p&gt;This tutorial series aims to provide you with an introduction to container and container orchestration technology using Docker, Kubernetes, and Red Hat OpenShift Container Platform.&lt;/p&gt;
 
 &lt;p&gt;This tutorial is Part 1 of my series on Red Hat Openshift. Check out the other articles:&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/introduction&quot;&gt;Fundamentals of Containers, Kubernetes, and Red Hat OpenShift : Tutorial introduction&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/setting-up-openshift-lab&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;Setting Up the Lab Environment&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/docker-overview/&quot;&gt;Overview of the Docker Architecture&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Managing the Life Cycle of Containers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/docker-life-cycle&quot;&gt;Managing the Life Cycle of Containers&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Building Custom Container Images with Dockerfile&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Creating Kubernetes Resources&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Creating Applications with Source-to-Image facility of Red Hat OpenShift&lt;/a&gt;&lt;/li&gt;
@@ -143,7 +143,7 @@ Additionally, you will build and deploy an application from source code using th
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/introduction&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;Fundamentals of Containers, Kubernetes, and Red Hat OpenShift : Tutorial introduction&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/setting-up-openshift-lab&quot;&gt;Setting Up the Lab Environment&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/docker-overview/&quot;&gt;Overview of the Docker Architecture&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Managing the Life Cycle of Containers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/docker-life-cycle&quot;&gt;Managing the Life Cycle of Containers&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Building Custom Container Images with Dockerfile&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Creating Kubernetes Resources&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Creating Applications with Source-to-Image facility of Red Hat OpenShift&lt;/a&gt;&lt;/li&gt;
@@ -242,7 +242,7 @@ Let’s put this into practice and &lt;a href=&quot;https://jerbiahmed.github.io
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/introduction&quot;&gt;Fundamentals of Containers, Kubernetes, and Red Hat OpenShift : Tutorial introduction&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/setting-up-openshift-lab&quot;&gt;Setting Up the Lab Environment&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/docker-overview/&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;Overview of the Docker Architecture&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Managing the Life Cycle of Containers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/docker-life-cycle&quot;&gt;Managing the Life Cycle of Containers&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Building Custom Container Images with Dockerfile&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Creating Kubernetes Resources&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Creating Applications with Source-to-Image facility of Red Hat OpenShift&lt;/a&gt;&lt;/li&gt;
@@ -464,4 +464,129 @@ docker rmi      # Remove one or more images
 
 &lt;p&gt;See also the full &lt;a href=&quot;https://docs.docker.com/engine/reference/commandline/docker/&quot;&gt;Docker command line reference&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Now that you’re able to run a container from an existing image, let’s learn more about the &lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;life Cycle of containers&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Openshift" /><category term="Kubernetes" /><category term="Docker" /><category term="Orchestration" /><category term="DevOps" /><summary type="html">Docker fundamentals introduction</summary></entry></feed>
+&lt;p&gt;Now that you’re able to run a container from an existing image, let’s learn more about the &lt;a href=&quot;https://jerbiahmed.github.io/docker-life-cycle&quot;&gt;life Cycle of containers&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Openshift" /><category term="Kubernetes" /><category term="Docker" /><category term="Orchestration" /><category term="DevOps" /><summary type="html">Docker fundamentals introduction</summary></entry><entry><title type="html">Managing the Life Cycle of Containers</title><link href="http://localhost:4000/docker-life-cycle/" rel="alternate" type="text/html" title="Managing the Life Cycle of Containers" /><published>2017-10-15T00:00:00+02:00</published><updated>2017-10-15T00:00:00+02:00</updated><id>http://localhost:4000/docker-life-cycle</id><content type="html" xml:base="http://localhost:4000/docker-life-cycle/">&lt;p&gt;This tutorial series aims to provide you with an introduction to container and container orchestration technology using Docker, Kubernetes, and Red Hat OpenShift Container Platform.&lt;/p&gt;
+
+&lt;p&gt;This tutorial is Part 3 of my series on Red Hat Openshift. Check out the other articles:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/introduction&quot;&gt;Fundamentals of Containers, Kubernetes, and Red Hat OpenShift : Tutorial introduction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/setting-up-openshift-lab&quot;&gt;Setting Up the Lab Environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/docker-overview/&quot;&gt;Overview of the Docker Architecture&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/docker-life-cycle&quot;&gt;&lt;span style=&quot;color:red&quot;&gt;Managing the Life Cycle of Containers&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Building Custom Container Images with Dockerfile&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Creating Kubernetes Resources&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;Creating Applications with Source-to-Image facility of Red Hat OpenShift&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Let’s curry on with this section, we will se how to manage the life cycle of a container from creation to deletion.&lt;/p&gt;
+
+&lt;h2 id=&quot;docker-client-verbs&quot;&gt;Docker Client Verbs&lt;/h2&gt;
+&lt;p&gt;The Docker client, implemented by the docker command, provides a set of verbs to create and manage containers. The following figure shows a summary of the most commonly used verbs that change container state.&lt;/p&gt;
+
+&lt;p class=&quot;image-pull-right&quot;&gt;&lt;img src=&quot;./../assets/img/06-docker_actions.png&quot; alt=&quot;jekyll Image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;managing-containers&quot;&gt;Managing Containers&lt;/h2&gt;
+
+&lt;p&gt;Docker provides the following commands to manage containers:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;docker ps&lt;/strong&gt;: This command is responsible for listing running containers&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;docker ps -a
+CONTAINER ID        IMAGE               COMMAND                 CREATED             STATUS                       PORTS               NAMES
+4829d82fbbff        do180/httpd         &lt;span class=&quot;s2&quot;&gt;&quot;httpd -D FOREGROUND&quot;&lt;/span&gt;   15 hours ago        Exited &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 3 seconds ago                         my-httpd-container
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;docker inspect&lt;/strong&gt;: This command is responsible for listing metadata about a running or stopped container. The command produces a JSON output&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;docker inspect my-httpd-container
+
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;Id&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;980e45b5376a4e966775fb49cbef47ee7bbd461be8bfd1a75c2cc5371676c8be&quot;&lt;/span&gt;,
+...
+    &lt;span class=&quot;s2&quot;&gt;&quot;NetworkSettings&quot;&lt;/span&gt;: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;Bridge&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;,
+        &lt;span class=&quot;s2&quot;&gt;&quot;EndpointID&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;483fc91363e5d877ea8f9696854a1f14710a085c6719afc858792154905d801a&quot;&lt;/span&gt;,
+        &lt;span class=&quot;s2&quot;&gt;&quot;Gateway&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;172.17.42.1&quot;&lt;/span&gt;,
+        &lt;span class=&quot;s2&quot;&gt;&quot;GlobalIPv6Address&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;,
+        &lt;span class=&quot;s2&quot;&gt;&quot;GlobalIPv6PrefixLen&quot;&lt;/span&gt;: 0,
+        &lt;span class=&quot;s2&quot;&gt;&quot;HairpinMode&quot;&lt;/span&gt;: &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;,
+        &lt;span class=&quot;s2&quot;&gt;&quot;IPAddress&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;172.17.0.9&quot;&lt;/span&gt;,
+...
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;docker stop&lt;/strong&gt;: This command is responsible for stopping a running container gracefully&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;docker kill&lt;/strong&gt;: This command is responsible for stopping a running container forcefully&lt;br /&gt;
+It is possible to specify the signal with the -s option
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker &lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; -s SIGKILL my-httpd-container
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;docker restart&lt;/strong&gt;: This command is responsible for restarting a stopped container&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;docker rm&lt;/strong&gt;: This command is responsible for deleting a container, discarding its state and filesystem&lt;br /&gt;
+It is possible to delete all containers at the same time. The docker ps command has the -q option that returns only the ID of the containers.
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;docker stop &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;docker ps -q&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;docker rm &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;docker ps -aq&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;running-commands-in-a-container&quot;&gt;Running Commands in a Container&lt;/h2&gt;
+&lt;p&gt;When a container is created, a default command is executed according to what is specified by the container image. However, it may be necessary to execute other commands to manage the running container.&lt;br /&gt;
+The &lt;strong&gt;docker exec&lt;/strong&gt; command starts an additional process inside a running container:&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; -it my-httpd-container /bin/bash
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;root@665b4a1e17b6:/#
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Now you have started a bash shell inside your container you can run any shell command on it.&lt;/p&gt;
+
+&lt;h2 id=&quot;managing-container-images&quot;&gt;Managing Container Images&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;docker save&lt;/strong&gt;: generates a file containing image metadata and preserves original image layers, so the original image can be later re-created exactly as it was.
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker save &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;-o FILE_NAME] IMAGE_NAME[:TAG]
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;docker load&lt;/strong&gt;: restore the container image from a file
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker load &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;-i FILE_NAME]
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;docker rmi&lt;/strong&gt;: delete an image from the cache
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;OPTIONS] IMAGE
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;p&gt;To delete all images that are not used by any container, use the following command:&lt;/p&gt;
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; docker rmi &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;docker images -q&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;docker diff&lt;/strong&gt;: used to identify which files were changed, created, or deleted since the container was started
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;docker diff mysql-basic
+C /run
+C /run/mysqld
+A /run/mysqld/mysqld.pid
+A /run/mysqld/mysqld.sock
+A /run/mysqld/mysqld.sock.lock
+A /run/secrets
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;Any added file is marked with an A, and any changed file is marked with a C.&lt;/p&gt;
+
+    &lt;p&gt;To commit the changes to another image, run &lt;strong&gt;docker commit&lt;/strong&gt;:&lt;/p&gt;
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker commit mysql-basic mysql-custom
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Playing with images and containers is cool but &lt;a href=&quot;https://jerbiahmed.github.io/&quot;&gt;building custom container images with Dockerfiles&lt;/a&gt; is even more fun!&lt;/p&gt;</content><author><name></name></author><category term="Openshift" /><category term="Kubernetes" /><category term="Docker" /><category term="Orchestration" /><category term="DevOps" /><summary type="html">Docker commands life cycle</summary></entry></feed>

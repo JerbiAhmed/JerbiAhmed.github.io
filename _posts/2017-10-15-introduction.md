@@ -122,7 +122,7 @@ Let's put this into practice and [set up a local lab][1].
 [0]: https://jerbiahmed.github.io/introduction
 [1]: https://jerbiahmed.github.io/setting-up-openshift-lab
 [2]: https://jerbiahmed.github.io/docker-overview/
-[3]: https://jerbiahmed.github.io/
+[3]: https://jerbiahmed.github.io/docker-life-cycle
 [4]: https://jerbiahmed.github.io/
 [5]: https://jerbiahmed.github.io/
 [6]: https://jerbiahmed.github.io/
