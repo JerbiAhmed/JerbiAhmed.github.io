@@ -1,6 +1,6 @@
 # About
 
-My own gh-page blog based on JBLOG jekyll theme http://alperenbozkurt.net/JBlog/JBlog-theme/.
+My own gh-page blog.
 If something looks wrong, just send me a PR. I will be grateful.
 
 ## Preview
